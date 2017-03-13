@@ -2,11 +2,18 @@
   "name": "react-aspect-ratio",
   "version": "1.0.0",
   "description": "React Aspect Ratio Component",
+  "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/roderickhsiao/react-aspect-ratio.git"
   },
   "license": "MIT",
+  "keywords": [
+    "react-aspect-ratio",
+    "responsive",
+    "reflow",
+    "react image placeholder"
+  ],
   "scripts": {
     "prepublish": ". ./.scripts/prepublish.sh",
     "lint": "eslint src",
@@ -15,7 +22,8 @@
     "test": "npm run lint && npm run testonly",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
     "storybook": "start-storybook -p 9010",
-    "publish-storybook": "bash .scripts/publish_storybook.sh"
+    "publish-storybook": "bash .scripts/publish_storybook.sh",
+    "postpublish": "npm run publish-storybook"
   },
   "devDependencies": {
     "react": "^15.3.2",
