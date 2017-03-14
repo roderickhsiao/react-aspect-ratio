@@ -1,8 +1,6 @@
 # React Aspect Ratio Component
 [![npm version](https://badge.fury.io/js/react-aspect-ratio.svg)](http://badge.fury.io/js/react-aspect-ratio)
 
-![Ratio](https://cloud.githubusercontent.com/assets/3906130/23882532/7e0cd586-081e-11e7-995f-005196385335.jpg "Ratio")
-
 This is a React implementation for aspect ratio placeholder preventing browser reflow before browser downloads and renders your component.
 
 Inspired by awesome post from [CSS Mojo](http://www.cssmojo.com/aspect-ratio-using-custom-properties-and-calc/) by [Thierry](https://twitter.com/thierrykoblentz)
@@ -49,3 +47,6 @@ import AspectRatio from 'react-aspect-ratio';
   }}
 />
 ```
+
+
+![Ratio](https://cloud.githubusercontent.com/assets/3906130/23882532/7e0cd586-081e-11e7-995f-005196385335.jpg "Ratio")
