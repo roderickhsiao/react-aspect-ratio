@@ -9,7 +9,7 @@ Original idea from [Sérgio Gomes](https://twitter.com/sergiomdgomes)
 
 ## Usage
 
-**You will need to `import 'react-aspect-ratio/style.css'`**
+**You will need to `import 'react-aspect-ratio/aspect-ratio.css'`**
 
 
 ```js
