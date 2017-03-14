@@ -1,7 +1,7 @@
 # React Aspect Ratio Component
 [![npm version](https://badge.fury.io/js/react-aspect-ratio.svg)](http://badge.fury.io/js/react-aspect-ratio)
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg"/>
+![Ratio](https://upload.wikimedia.org/wikipedia/commons/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg "Ratio")
 
 This is a React implementation for aspect ratio placeholder preventing browser reflow before browser downloads and renders your component.
 
