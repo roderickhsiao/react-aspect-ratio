@@ -6,9 +6,6 @@ const {width, height, scale} = Dimensions.get("window"),
     vmax = Math.max(vw, vh);
 
 export default StyleSheet.create({
-    "react-aspect-ratio-placeholder": {
-        "backgroundColor": "rgba(0,0,0,.12)"
-    },
     "[style*=\"--aspect-ratio\"] > :first-child": {
         "width": "100%"
     },
