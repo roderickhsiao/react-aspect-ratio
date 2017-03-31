@@ -30,7 +30,7 @@ storiesOf('AspectRatio', module)
     <div className="card">
       <h2>Iframe with aspect ratio</h2>
       <AspectRatio ratio="560/315" style={{ maxWidth: '560px' }}>
-        <iframe src="https://www.youtube.com/embed/Bku71V5f66g" frameBorder="0" allowFullScreen />
+        <iframe src="https://www.youtube.com/embed/Sv6dMFF_yts" frameBorder="0" allowFullScreen />
       </AspectRatio>
     </div>
   ));
