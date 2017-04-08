@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 class AspectRatio extends PureComponent {
   constructor(props) {
@@ -33,8 +34,8 @@ class AspectRatio extends PureComponent {
 }
 
 AspectRatio.propTypes = {
-  ratio: React.PropTypes.string.isRequired,
-  children: React.PropTypes.node
+  ratio: PropTypes.string.isRequired,
+  children: PropTypes.node
 };
 
 AspectRatio.defaultProps = {
