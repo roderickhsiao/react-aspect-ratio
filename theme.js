@@ -11,8 +11,9 @@ export default StyleSheet.create({
     },
     "body": {
         "backgroundColor": "#fafafa",
-        "fontFamily": "'Helvetica,Arial,sans-serif'",
+        "fontFamily": "Roboto,sans-serif",
         "fontSmoothing": "antialiased",
+        "WebkitFontSmoothing": "antialiased",
         "marginTop": 0,
         "marginRight": 0,
         "marginBottom": 0,
@@ -24,22 +25,59 @@ export default StyleSheet.create({
         "paddingLeft": 0,
         "textRendering": "optimizeLegibility"
     },
+    "mui-icon": {
+        "fontFamily": "'material-ui-icons'",
+        "speak": "none",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+        "fontVariant": "normal",
+        "textTransform": "none",
+        "lineHeight": 1,
+        "WebkitFontSmoothing": "antialiased",
+        "MozOsxFontSmoothing": "grayscale"
+    },
+    "mui-icongithub": {
+        "position": "absolute",
+        "paddingTop": 10,
+        "paddingRight": 10,
+        "paddingBottom": 10,
+        "paddingLeft": 10,
+        "fontSize": 42,
+        "right": 0,
+        "top": 0,
+        "textDecoration": "none",
+        "color": "rgba(255,255,255,.83)",
+        "transitionDuration": ".3s"
+    },
+    "mui-icongithub:hover": {
+        "color": "#fff"
+    },
+    "mui-icongithub:before": {
+        "content": "\\e625"
+    },
     "page__title": {
-        "borderBottom": "1px solid rgba(0,0,0,.12)",
-        "paddingTop": 8,
-        "paddingRight": 16,
-        "paddingBottom": 8,
-        "paddingLeft": 16,
-        "fontSize": 20,
-        "backgroundColor": "#4caf50",
+        "backgroundColor": "#fb8c00",
         "color": "#fff",
-        "fontWeight": "400"
+        "paddingTop": 32,
+        "paddingRight": 16,
+        "paddingBottom": 16,
+        "paddingLeft": 16
+    },
+    "page__title-main": {
+        "position": "relative",
+        "marginTop": 0,
+        "marginRight": 0,
+        "marginBottom": 0,
+        "marginLeft": 0,
+        "fontWeight": "400",
+        "fontSize": 56,
+        "verticalAlign": "baseline"
     },
     "page__title-desc": {
         "fontStyle": "italic"
     },
     "card": {
-        "boxShadow": "0 1px 4px 0 rgba(0,0,0,.14)",
+        "boxShadow": "rgba(0, 0, 0, 0.117647) 0 1px 6px, rgba(0, 0, 0, 0.117647) 0 1px 4px",
         "width": "50%",
         "marginTop": 10,
         "marginRight": 10,
@@ -48,11 +86,10 @@ export default StyleSheet.create({
         "backgroundColor": "#fff"
     },
     "card__head": {
-        "paddingTop": 8,
+        "paddingTop": 16,
         "paddingRight": 16,
-        "paddingBottom": 8,
-        "paddingLeft": 16,
-        "borderBottom": "1px solid rgba(0,0,0,.12)"
+        "paddingBottom": 0,
+        "paddingLeft": 16
     },
     "card__title": {
         "marginTop": 0,
