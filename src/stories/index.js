@@ -9,7 +9,12 @@ const PageTitle = () => (
   <div className="page__title">
     <h1 className="page__title-main">
       React Apect Ratio
-      <a className="github mui-icon" href="https://github.com/roderickhsiao/react-aspect-ratio"></a>
+      <a
+        className="github mui-icon"
+        href="https://github.com/roderickhsiao/react-aspect-ratio"
+        target="_blank"
+        rel="noopener noreferrer"
+      />
     </h1>
     <p className="page__title-desc">
       prevent reflow by preserving aspect ratio of your component
