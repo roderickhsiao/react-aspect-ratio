@@ -1,6 +1,6 @@
 {
   "name": "react-aspect-ratio",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "React Aspect Ratio Component",
   "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
   "repository": {
@@ -12,18 +12,20 @@
     "react-aspect-ratio",
     "responsive",
     "reflow",
-    "react image placeholder"
+    "react image placeholder",
+    "css variables"
   ],
   "scripts": {
-    "prepublish": ". ./.scripts/prepublish.sh",
+    "flow": "flow src",
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
-    "testonly": "jest .",
-    "test": "npm run lint && npm run testonly",
-    "test-watch": "npm run testonly -- --watch --watch-extensions js",
-    "storybook": "start-storybook -p 9010",
+    "postpublish": "npm run publish-storybook",
+    "prepublish": ". ./.scripts/prepublish.sh",
     "publish-storybook": "bash .scripts/publish_storybook.sh",
-    "postpublish": "npm run publish-storybook"
+    "storybook": "start-storybook -p 9010",
+    "test-watch": "npm run testonly -- --watch --watch-extensions js",
+    "test": "npm run lint && npm run testonly",
+    "testonly": "jest ."
   },
   "devDependencies": {
     "@kadira/storybook": "^2.18.1",
@@ -41,6 +43,7 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.10.0",
+    "flow-bin": "^0.44.2",
     "git-url-parse": "^6.0.1",
     "jest": "^19.0.2",
     "react": "^15.3.2",

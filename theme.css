@@ -1,0 +1,47 @@
+/**
+ * Storybook theme
+ */
+
+* {
+  box-sizing: border-box;;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: 'Helvetica,Arial,sans-serif';
+  font-smoothing: antialiased;
+  margin: 0;
+  min-height: 100%;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+}
+.page__title {
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  padding: 8px 16px;
+  font-size: 20px;
+  background-color: #4caf50;
+  color: #fff;
+  font-weight: 400;
+}
+.page__title-desc {
+  font-style: italic;;
+}
+
+.card {
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.14);
+  width: 50%;
+  margin: 10px;
+  background-color: #fff;
+}
+.card__head {
+  padding: 8px 16px;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+}
+.card__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 20px;
+}
+.card__conent {
+  padding: 16px;
+}
