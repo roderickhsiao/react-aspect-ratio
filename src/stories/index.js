@@ -68,6 +68,49 @@ storiesOf('AspectRatio', module)
       />
     </div>
   ))
+  .add('Gallery', () => {
+    const images = [
+      {
+        src: 'http://pbs.twimg.com/media/CO-ghuGWEAAGsFd.jpg',
+        ratio: '261/393'
+      },
+      {
+        src: 'http://static.boredpanda.com/blog/wp-content/uploads/2015/04/bulldog-puppy-cute-dog-photography-23__605.jpg',
+        ratio: '550/393'
+      },
+      {
+        src: 'https://www.dogspuppiesforsale.com/uploads/source/Category%20update/Bulldog/bulldog-puppies-wallpaper-4.jpg',
+        ratio: '629/393'
+      },
+      {
+        src: 'http://static.boredpanda.com/blog/wp-content/uploads/2015/04/bulldog-puppy-cute-dog-photography-5__605.jpg',
+        ratio: '599/393'
+      },
+      {
+        src: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQikQmH0BSHHpjcqFkyZr5FqMXuwONleKSsMRmcz-L-bLJHmyxgqw',
+        ratio: '500/377'
+      }
+    ];
+    return (
+      <div>
+        <PageTitle />
+        <Card
+          titleText="Image Gallery with Aspect Ratio"
+          contentNode={
+            <div className="gallery">
+              {images.map(image => (
+                <div className="gallery__image" key={image.src}>
+                  <AspectRatio ratio={image.ratio}>
+                    <img src={image.src} />
+                  </AspectRatio>
+                </div>
+              ))}
+            </div>
+          }
+        />
+      </div>
+    );
+  })
   .add('Iframe', () => (
     <div>
       <PageTitle />

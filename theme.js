@@ -78,7 +78,7 @@ export default StyleSheet.create({
     },
     "card": {
         "boxShadow": "rgba(0, 0, 0, 0.117647) 0 1px 6px, rgba(0, 0, 0, 0.117647) 0 1px 4px",
-        "width": "50%",
+        "width": "60%",
         "marginTop": 10,
         "marginRight": 10,
         "marginBottom": 10,
@@ -104,5 +104,27 @@ export default StyleSheet.create({
         "paddingRight": 16,
         "paddingBottom": 16,
         "paddingLeft": 16
+    },
+    "gallery": {
+        "marginTop": 1.5,
+        "marginRight": 0,
+        "marginBottom": 1.5,
+        "marginLeft": 0,
+        "paddingTop": 0,
+        "paddingRight": 0,
+        "paddingBottom": 0,
+        "paddingLeft": 0,
+        "columnCount": 2,
+        "columnGap": 1.5,
+        "fontSize": 0.85
+    },
+    "gallery__image": {
+        "backgroundColor": "#eee",
+        "display": "inline-block",
+        "marginTop": 0,
+        "marginRight": 0,
+        "marginBottom": 1,
+        "marginLeft": 0,
+        "width": "100%"
     }
 });

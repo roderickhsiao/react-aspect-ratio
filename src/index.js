@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 class AspectRatio extends PureComponent {
   node: {
     style: Object
-  }
+  };
 
   constructor(props: Object) {
     super(props);
@@ -14,7 +14,7 @@ class AspectRatio extends PureComponent {
 
   static defaultProps = {
     className: 'react-aspect-ratio-placeholder',
-    ratio: '3/4'
+    ratio: '1/1'
   };
 
   static propTypes = {
