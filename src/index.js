@@ -2,6 +2,8 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
+const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
+
 class AspectRatio extends PureComponent {
   node: {
     style: Object
@@ -10,6 +12,10 @@ class AspectRatio extends PureComponent {
   constructor(props: Object) {
     super(props);
     this.node;
+
+    this.state = {
+      ratio: props.ratio
+    };
   }
 
   static defaultProps = {
@@ -23,8 +29,6 @@ class AspectRatio extends PureComponent {
   };
 
   componentDidMount() {
-    // until React support CSS variables
-    // https://github.com/facebook/react/issues/6411
     this.updateAspectRatio('', this.props.ratio);
   }
 
@@ -33,21 +37,40 @@ class AspectRatio extends PureComponent {
   }
 
   updateAspectRatio = (ratio: string, nextRatio: string) => {
-    if (!this.node) {
-      return;
-    }
     if (ratio !== nextRatio) {
-      this.node.style.setProperty('--aspect-ratio', nextRatio);
+      this.setState(
+        {
+          ratio: nextRatio
+        },
+        () => {
+          if (this.node) {
+            // BC for older version of React https://github.com/facebook/react/issues/6411
+            // check if React support custom property AFTER
+            const customPropertyValue = this.node.style.getPropertyValue(
+              CUSTOM_PROPERTY_NAME
+            );
+            if (!customPropertyValue) {
+              this.node.style.setProperty('--aspect-ratio', nextRatio);
+            }
+          }
+        }
+      );
     }
   };
 
   render() {
-    const { ratio, ...others } = this.props; // eslint-disable-line no-unused-vars
+    const { ratio, style, ...others } = this.props; // eslint-disable-line no-unused-vars
+    const newStyle = Object.assign(
+      { [CUSTOM_PROPERTY_NAME]: this.state.ratio },
+      style
+    );
+
     return (
       <div
         ref={node => {
           this.node = node;
         }}
+        style={newStyle}
         {...others}
       >
         {this.props.children}
