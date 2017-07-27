@@ -79,10 +79,6 @@ storiesOf('AspectRatio', module)
         ratio: '550/393'
       },
       {
-        src: 'https://www.dogspuppiesforsale.com/uploads/source/Category%20update/Bulldog/bulldog-puppies-wallpaper-4.jpg',
-        ratio: '629/393'
-      },
-      {
         src: 'http://static.boredpanda.com/blog/wp-content/uploads/2015/04/bulldog-puppy-cute-dog-photography-5__605.jpg',
         ratio: '599/393'
       },

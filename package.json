@@ -1,6 +1,6 @@
 {
   "name": "react-aspect-ratio",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "React Aspect Ratio Component",
   "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
   "repository": {
@@ -46,12 +46,12 @@
     "flow-bin": "^0.47.0",
     "git-url-parse": "^6.0.1",
     "jest": "^20.0.0",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
+    "react": "next",
+    "react-dom": "next",
     "react-test-renderer": "^15.4.2"
   },
   "peerDependencies": {
-    "react": "^0.14.7 || ^15.0.0"
+    "react": "^0.14.7 || ^15.0.0 || ^16.0.0 || next"
   },
   "dependencies": {
     "prop-types": "^15.5.0"
