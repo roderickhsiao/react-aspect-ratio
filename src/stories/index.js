@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf } from '@kadira/storybook';
 import AspectRatio from '../index';
 
 import '../../aspect-ratio.css';
