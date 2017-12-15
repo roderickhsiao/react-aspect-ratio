@@ -1,6 +1,6 @@
 {
   "name": "react-aspect-ratio",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "React Aspect Ratio Component",
   "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
   "repository": {
@@ -63,7 +63,6 @@
     "react-intl": "^2.4.0"
   },
   "main": "dist/index.js",
-  "module": "dist/es/index.js",
   "engines": {
     "npm": "^3.0.0"
   }
