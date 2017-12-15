@@ -1,6 +1,6 @@
 {
   "name": "react-aspect-ratio",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "React Aspect Ratio Component",
   "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
   "repository": {
@@ -20,7 +20,7 @@
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
     "postpublish": "npm run publish-storybook",
-    "prepublish": ". ./.scripts/prepublish.sh && flow-remove-types --pretty src/index.js > dist/index.es.js",
+    "prepublish": ". ./.scripts/prepublish.sh",
     "publish-storybook": "bash .scripts/publish_storybook.sh",
     "storybook": "start-storybook -p 9010",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
@@ -33,9 +33,13 @@
     "babel-core": "^6.14.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-polyfill": "^6.13.0",
     "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
     "babel-preset-react-app": "^2.2.0",
     "babel-runtime": "^6.11.6",
     "enzyme": "^3.0.0",
@@ -44,8 +48,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^5.0.1",
     "eslint-plugin-react": "^7.0.0",
-    "flow-bin": "^0.47.0",
-    "flow-remove-types": "^1.2.3",
+    "flow-bin": "^0.61.0",
     "git-url-parse": "^6.0.1",
     "jest": "^20.0.0",
     "react": "^16.0.0",
@@ -60,7 +63,7 @@
     "react-intl": "^2.4.0"
   },
   "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "module": "dist/es/index.js",
   "engines": {
     "npm": "^3.0.0"
   }
