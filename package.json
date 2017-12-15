@@ -1,6 +1,6 @@
 {
   "name": "react-aspect-ratio",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "React Aspect Ratio Component",
   "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
   "repository": {
@@ -20,7 +20,7 @@
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
     "postpublish": "npm run publish-storybook",
-    "prepublish": ". ./.scripts/prepublish.sh",
+    "prepublish": ". ./.scripts/prepublish.sh && flow-remove-types --pretty src/index.js > dist/index.es.js",
     "publish-storybook": "bash .scripts/publish_storybook.sh",
     "storybook": "start-storybook -p 9010",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
@@ -35,6 +35,7 @@
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-runtime": "^6.15.0",
     "babel-polyfill": "^6.13.0",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react-app": "^2.2.0",
     "babel-runtime": "^6.11.6",
     "enzyme": "^3.0.0",
@@ -44,6 +45,7 @@
     "eslint-plugin-jsx-a11y": "^5.0.1",
     "eslint-plugin-react": "^7.0.0",
     "flow-bin": "^0.47.0",
+    "flow-remove-types": "^1.2.3",
     "git-url-parse": "^6.0.1",
     "jest": "^20.0.0",
     "react": "^16.0.0",
@@ -58,7 +60,7 @@
     "react-intl": "^2.4.0"
   },
   "main": "dist/index.js",
-  "module": "src/index.js",
+  "module": "dist/index.es.js",
   "engines": {
     "npm": "^3.0.0"
   }
