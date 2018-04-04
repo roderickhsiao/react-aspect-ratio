@@ -60,7 +60,8 @@
   },
   "dependencies": {
     "prop-types": "^15.5.0",
-    "react-intl": "^2.4.0"
+    "react-intl": "^2.4.0",
+    "react-lifecycles-compat": "^1.1.0"
   },
   "main": "dist/index.js",
   "engines": {
