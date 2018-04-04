@@ -28,7 +28,7 @@
     "testonly": "jest ."
   },
   "devDependencies": {
-    "@storybook/react": "3.2.11",
+    "@storybook/react": "^3.2.11",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.14.0",
     "babel-eslint": "^7.2.3",
