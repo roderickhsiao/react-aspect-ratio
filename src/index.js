@@ -39,10 +39,10 @@ class AspectRatio extends PureComponent<Props> {
       return null;
     }
 
-    return this.getAspectRatio(nextProps.ratio);
+    return {
+      ratio: nextProps.ratio
+    };
   }
-
-  getAspectRatio = (ratio: string) => ({ ratio });
 
   componentDidUpdate() {
     if (this.node) {
