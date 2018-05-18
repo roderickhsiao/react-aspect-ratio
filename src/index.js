@@ -46,11 +46,12 @@ class AspectRatio extends PureComponent<Props> {
 
   componentDidUpdate() {
     if (this.node) {
+      const { ratio } = this.props;
       // BC for older version of React https://github.com/facebook/react/issues/6411
       // check if React support custom property AFTER
       const customPropertyValue = this.node.style.getPropertyValue(CUSTOM_PROPERTY_NAME);
       if (!customPropertyValue) {
-        this.node.style.setProperty('--aspect-ratio', nextRatio);
+        this.node.style.setProperty('--aspect-ratio', ratio);
       }
     }
   }
