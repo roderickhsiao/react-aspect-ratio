@@ -7,7 +7,7 @@ import { polyfill } from 'react-lifecycles-compat';
 const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
 
 type Props = {
-  ratio: string,
+  ratio: string | number,
   children: Object
 };
 
@@ -17,12 +17,12 @@ class AspectRatio extends PureComponent<Props> {
   };
 
   state: {
-    ratio: string
-  }
+    ratio: string | number
+  };
 
   state = {
     ratio: this.props.ratio
-  }
+  };
 
   static defaultProps = {
     className: 'react-aspect-ratio-placeholder',
@@ -30,7 +30,7 @@ class AspectRatio extends PureComponent<Props> {
   };
 
   static propTypes = {
-    ratio: PropTypes.string.isRequired,
+    ratio: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     children: PropTypes.node
   };
 
