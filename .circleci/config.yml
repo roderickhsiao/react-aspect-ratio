@@ -129,12 +129,6 @@ workflows:
   build-and-test:
     jobs:
       - build
-      - flow:
-        requires:
-          - build
-      - test:
-        requires:
-          - build
-      - bundlesize:
-        requires:
-          - build
+      - flow
+      - test
+      - bundlesize
