@@ -56,7 +56,7 @@ class AspectRatio extends PureComponent<Props, State> {
   }
 
   render() {
-    const { ratio, style, ...otherProps } = this.props; // eslint-disable-line no-unused-vars
+    const { ratio, style, children, ...otherProps } = this.props; // eslint-disable-line no-unused-vars
 
     const newStyle = {
       [CUSTOM_PROPERTY_NAME]: this.state.ratio,
@@ -71,7 +71,7 @@ class AspectRatio extends PureComponent<Props, State> {
         style={newStyle}
         {...otherProps}
       >
-        {this.props.children}
+        {children}
       </div>
     );
   }
