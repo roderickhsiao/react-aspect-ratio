@@ -1,13 +1,26 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import AspectRatio from '../index';
+import React from "react";
+import renderer from "react-test-renderer";
 
-describe('Aspect Ratio', () => {
-  it('should render wrapper for children', () => {
-    const innerImage = (<img src="https://foo.bar" role="presentation" />);
-    const component = shallow(<AspectRatio ratio="4/3">{innerImage}</AspectRatio>);
+import AspectRatio from "../index";
 
-    const elm = component.find('.react-aspect-ratio-placeholder');
-    expect(elm.length).toBe(1);
+describe("Aspect Ratio", () => {
+  it("should render wrapper for children", () => {
+    const innerImage = <img src="https://foo.bar" alt="demo" />;
+    const node = renderer.create(
+      <AspectRatio ratio="4/3">{innerImage}</AspectRatio>
+    ).toJSON();
+    expect(node).toMatchSnapshot();
+
+  });
+
+  it("custom style willl be adpoted", () => {
+    const innerImage = <img src="https://foo.bar" alt="demo" />;
+    const node = renderer.create(
+      <AspectRatio ratio="4/3" style={{ color: "#fff" }}>
+        {innerImage}
+      </AspectRatio>
+    ).toJSON();
+
+    expect(node).toMatchSnapshot();
   });
 });
