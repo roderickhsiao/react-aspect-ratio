@@ -36,11 +36,14 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
   flow:
-    - run: yarn flow
+    steps:
+      - run: yarn flow
   test:
-    - run: yarn test
+    steps:
+      - run: yarn test
   bundlesize:
-    - run: yarn bundlesize
+    steps:
+      - run: yarn bundlesize
 
 workflows:
   version: 2
