@@ -35,3 +35,5 @@ jobs:
 
       # run tests!
       - run: yarn test
+      - run: yarn flow
+      - run: yarn bundlesize

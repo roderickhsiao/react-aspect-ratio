@@ -7,13 +7,16 @@ const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
 
 type Props = {
   ratio?: string | number,
+  style: Object,
   children: Object
 };
 
-class AspectRatio extends PureComponent<Props> {
-  node: {
-    style: Object
-  };
+type State = {
+  ratio?: string | number
+};
+
+class AspectRatio extends PureComponent<Props, State> {
+  node: ?Element;
 
   state: {
     ratio: string | number
@@ -22,6 +25,8 @@ class AspectRatio extends PureComponent<Props> {
   state = {
     ratio: this.props.ratio
   };
+
+  node = null;
 
   static defaultProps = {
     className: 'react-aspect-ratio-placeholder',
@@ -40,17 +45,21 @@ class AspectRatio extends PureComponent<Props> {
 
   componentDidUpdate() {
     if (this.node) {
+      const { node } = this;
+
       // BC for older version of React https://github.com/facebook/react/issues/6411
       // check if React support custom property AFTER
-      const customPropertyValue = this.node.style.getPropertyValue(CUSTOM_PROPERTY_NAME);
+      const customPropertyValue = node.style.getPropertyValue(CUSTOM_PROPERTY_NAME);
       if (!customPropertyValue) {
-        this.node.style.setProperty(CUSTOM_PROPERTY_NAME, this.state.ratio);
+        node.style.setProperty(CUSTOM_PROPERTY_NAME, String(this.state.ratio));
       }
     }
   }
 
   render() {
-    const { ratio, style, ...otherProps } = this.props; // eslint-disable-line no-unused-vars
+    const {
+      ratio, style, children, ...otherProps
+    } = this.props; // eslint-disable-line no-unused-vars
 
     const newStyle = {
       [CUSTOM_PROPERTY_NAME]: this.state.ratio,
@@ -65,7 +74,7 @@ class AspectRatio extends PureComponent<Props> {
         style={newStyle}
         {...otherProps}
       >
-        {this.props.children}
+        {children}
       </div>
     );
   }
