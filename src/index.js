@@ -12,7 +12,7 @@ type Props = {
 };
 
 type State = {
-  ratio: string | number
+  ratio?: string | number
 };
 
 class AspectRatio extends PureComponent<Props, State> {
