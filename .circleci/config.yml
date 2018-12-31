@@ -34,8 +34,4 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run:
-        name: Run tests with JUnit as reporter
-        command: jest --ci --reporters=default --reporters=jest-junit
-        environment:
-        JEST_JUNIT_OUTPUT: "reports/junit/js-test-results.xml"
+      - run: yarn test
