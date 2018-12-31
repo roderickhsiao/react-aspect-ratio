@@ -25,13 +25,14 @@
     "storybook": "start-storybook -p 9010",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
     "test": "npm run lint && npm run testonly",
-    "testonly": "jest ."
+    "testonly": "jest --config jest-config.js"
   },
   "devDependencies": {
-    "@storybook/react": "^3.2.11",
+    "@storybook/react": "^4.0.0",
     "babel-cli": "^6.14.0",
     "babel-core": "^6.14.0",
     "babel-eslint": "^7.2.3",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^7.0.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -43,15 +44,16 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-app": "^3.0.0",
     "babel-runtime": "^6.11.6",
-    "enzyme": "^3.0.0",
-    "eslint": "^3.6.0",
-    "eslint-config-airbnb": "^15.0.0",
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-flowtype": "^3.2.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^5.0.1",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.0.0",
-    "flow-bin": "^0.61.0",
-    "git-url-parse": "^6.0.1",
-    "jest": "^20.0.0",
+    "flow-bin": "^0.89.0",
+    "git-url-parse": "^11.1.1",
+    "jest": "^23.0.0",
+    "jest-cli": "^23.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-test-renderer": "^16.0.0"
@@ -60,7 +62,6 @@
     "react": "^0.14.7 || ^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "prop-types": "^15.5.0",
     "react-lifecycles-compat": "^3.0.0"
   },
   "module": "dist/es/index.js",

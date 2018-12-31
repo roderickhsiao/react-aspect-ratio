@@ -1,5 +1,11 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "flowtype"
+  ],
   "rules": {
     # We use _ to define private variables and methods in clases
     "no-underscore-dangle": 0,
@@ -18,7 +24,11 @@
     # propTypes can be object
     "react/forbid-prop-types": 0,
     # trailing comma
-    "comma-dangle": 0
+    "comma-dangle": 0,
+    "react/sort-comp": 0,
+    "react/prop-types": 0,
+    "arrow-parens": 0,
+    "no-undef": 0
   },
   "env": {
     "jest": true

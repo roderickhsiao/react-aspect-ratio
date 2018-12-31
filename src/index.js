@@ -1,10 +1,9 @@
 // @flow
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
+import React, { PureComponent } from "react";
 
-import { polyfill } from 'react-lifecycles-compat';
+import { polyfill } from "react-lifecycles-compat";
 
-const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
+const CUSTOM_PROPERTY_NAME = "--aspect-ratio";
 
 type Props = {
   ratio: string | number,
@@ -25,13 +24,8 @@ class AspectRatio extends PureComponent<Props> {
   };
 
   static defaultProps = {
-    className: 'react-aspect-ratio-placeholder',
-    ratio: '1/1'
-  };
-
-  static propTypes = {
-    ratio: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    children: PropTypes.node
+    className: "react-aspect-ratio-placeholder",
+    ratio: "1/1"
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -48,17 +42,22 @@ class AspectRatio extends PureComponent<Props> {
     if (this.node) {
       // BC for older version of React https://github.com/facebook/react/issues/6411
       // check if React support custom property AFTER
-      const customPropertyValue = this.node.style.getPropertyValue(CUSTOM_PROPERTY_NAME);
+      const customPropertyValue = this.node.style.getPropertyValue(
+        CUSTOM_PROPERTY_NAME
+      );
       if (!customPropertyValue) {
-        this.node.style.setProperty('--aspect-ratio', this.state.ratio);
+        this.node.style.setProperty(CUSTOM_PROPERTY_NAME, this.state.ratio);
       }
     }
   }
 
   render() {
-    const { ratio, style, ...others } = this.props; // eslint-disable-line no-unused-vars
+    const { ratio, style, ...otherProps } = this.props; // eslint-disable-line no-unused-vars
 
-    const newStyle = Object.assign({ [CUSTOM_PROPERTY_NAME]: this.state.ratio }, style);
+    const newStyle = {
+      [CUSTOM_PROPERTY_NAME]: this.state.ratio,
+      ...style
+    };
 
     return (
       <div
@@ -66,7 +65,7 @@ class AspectRatio extends PureComponent<Props> {
           this.node = node;
         }}
         style={newStyle}
-        {...others}
+        {...otherProps}
       >
         {this.props.children}
       </div>

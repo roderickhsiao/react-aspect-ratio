@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Aspect Ratio custom style willl be adpoted 1`] = `
+<div
+  className="react-aspect-ratio-placeholder"
+  style={
+    Object {
+      "--aspect-ratio": "4/3",
+      "color": "#fff",
+    }
+  }
+>
+  <img
+    alt="demo"
+    src="https://foo.bar"
+  />
+</div>
+`;
+
+exports[`Aspect Ratio should render wrapper for children 1`] = `
+<div
+  className="react-aspect-ratio-placeholder"
+  style={
+    Object {
+      "--aspect-ratio": "4/3",
+    }
+  }
+>
+  <img
+    alt="demo"
+    src="https://foo.bar"
+  />
+</div>
+`;
