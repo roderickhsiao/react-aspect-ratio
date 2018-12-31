@@ -48,9 +48,9 @@ class AspectRatio extends PureComponent<Props, State> {
       const node = this.node;
       // BC for older version of React https://github.com/facebook/react/issues/6411
       // check if React support custom property AFTER
-      const customPropertyValue = node.style.getPropertyValue(CUSTOM_PROPERTY_NAME); // $FlowFixMe
+      const customPropertyValue = node.style.getPropertyValue(CUSTOM_PROPERTY_NAME);
       if (!customPropertyValue) {
-        node.style.setProperty(CUSTOM_PROPERTY_NAME, String(this.state.ratio)); // $FlowFixMe
+        node.style.setProperty(CUSTOM_PROPERTY_NAME, String(this.state.ratio));
       }
     }
   }
