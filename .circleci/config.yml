@@ -50,12 +50,12 @@ workflows:
   build-and-test:
     jobs:
       - build
-      - flow
+      - flow:
         requires:
           - build
-      - test
+      - test:
         requires:
           - build
-      - bundlesize
+      - bundlesize:
         requires:
           - build
