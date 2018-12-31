@@ -1,8 +1,15 @@
 .babelrc
+.circleci
 .eslintrc
+.flowconfig
 .gitignore
 .npmignore
 .scripts
 .storybook
+CONTRIBUTING.md
+jest-config.js
 src
+theme.css
+theme.js
+yarn-error.log
 yarn.lock
