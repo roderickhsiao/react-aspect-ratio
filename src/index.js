@@ -1,12 +1,12 @@
 // @flow
-import React, { PureComponent, createRef } from 'react';
+import React, { PureComponent } from 'react';
 
 import { polyfill } from 'react-lifecycles-compat';
 
 const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
 
 type Props = {
-  ratio: string | number,
+  ratio?: string | number,
   style: Object,
   children: Object
 };
@@ -45,7 +45,8 @@ class AspectRatio extends PureComponent<Props, State> {
 
   componentDidUpdate() {
     if (this.node) {
-      const node = this.node;
+      const { node } = this;
+
       // BC for older version of React https://github.com/facebook/react/issues/6411
       // check if React support custom property AFTER
       const customPropertyValue = node.style.getPropertyValue(CUSTOM_PROPERTY_NAME);
@@ -56,7 +57,9 @@ class AspectRatio extends PureComponent<Props, State> {
   }
 
   render() {
-    const { ratio, style, children, ...otherProps } = this.props; // eslint-disable-line no-unused-vars
+    const {
+      ratio, style, children, ...otherProps
+    } = this.props; // eslint-disable-line no-unused-vars
 
     const newStyle = {
       [CUSTOM_PROPERTY_NAME]: this.state.ratio,
