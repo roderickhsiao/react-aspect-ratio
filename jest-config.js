@@ -1,5 +1,6 @@
 module.exports = {
   transform: {
-    "^.+\\.jsx?$": "babel-jest"
-  }
+    '^.+\\.jsx?$': 'babel-jest'
+  },
+  reporters: ['default', 'jest-junit']
 };
