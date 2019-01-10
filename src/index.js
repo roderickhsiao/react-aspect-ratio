@@ -6,13 +6,13 @@ import { polyfill } from 'react-lifecycles-compat';
 const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
 
 type Props = {
-  ratio?: string | number,
+  ratio: string | number,
   style: Object,
   children: Object
 };
 
 type State = {
-  ratio?: string | number
+  ratio: string | number
 };
 
 class AspectRatio extends PureComponent<Props, State> {
