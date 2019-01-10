@@ -5,7 +5,7 @@ exports[`Aspect Ratio custom style willl be adpoted 1`] = `
   className="react-aspect-ratio-placeholder"
   style={
     Object {
-      "--aspect-ratio": "4/3",
+      "--aspect-ratio": "(4/3)",
       "color": "#fff",
     }
   }
@@ -22,7 +22,7 @@ exports[`Aspect Ratio should render wrapper for children 1`] = `
   className="react-aspect-ratio-placeholder"
   style={
     Object {
-      "--aspect-ratio": "4/3",
+      "--aspect-ratio": "(4/3)",
     }
   }
 >

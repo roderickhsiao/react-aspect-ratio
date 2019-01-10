@@ -9,6 +9,7 @@
     position: relative;
   }
   [style*="--aspect-ratio"]::before {
+    height: 0;
     content: "";
     display: block;
     padding-bottom: calc(100% / (var(--aspect-ratio)));
