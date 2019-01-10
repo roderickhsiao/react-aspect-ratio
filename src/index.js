@@ -6,7 +6,7 @@ import { polyfill } from 'react-lifecycles-compat';
 const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
 
 type Props = {
-  ratio: string | number,
+  ratio: string | number, // eslint-disable-line
   style: Object,
   children: Object
 };

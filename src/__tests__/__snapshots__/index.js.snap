@@ -32,3 +32,19 @@ exports[`Aspect Ratio should render wrapper for children 1`] = `
   />
 </div>
 `;
+
+exports[`Aspect Ratio should support number as props 1`] = `
+<div
+  className="react-aspect-ratio-placeholder"
+  style={
+    Object {
+      "--aspect-ratio": "(0.75)",
+    }
+  }
+>
+  <img
+    alt="demo"
+    src="https://foo.bar"
+  />
+</div>
+`;
