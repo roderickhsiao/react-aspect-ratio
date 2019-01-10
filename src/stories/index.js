@@ -45,6 +45,19 @@ storiesOf('AspectRatio', module)
       />
     </Fragment>
   ))
+  .add('Image with number', () => (
+    <Fragment>
+      <PageTitle />
+      <Card
+        titleText="Image with Aspect Ratio"
+        contentNode={(
+          <AspectRatio ratio={0.75} style={{ maxWidth: '400px' }}>
+            <img src="https://c1.staticflickr.com/4/3896/14550191836_cc0675d906.jpg" alt="demo" />
+          </AspectRatio>
+)}
+      />
+    </Fragment>
+  ))
   .add('Background Image', () => (
     <Fragment>
       <PageTitle />
