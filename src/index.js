@@ -1,14 +1,14 @@
 // @flow
-import React, { PureComponent } from 'react';
+import React, { PureComponent, type Element } from "react";
 
-import { polyfill } from 'react-lifecycles-compat';
+import { polyfill } from "react-lifecycles-compat";
 
-const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
+const CUSTOM_PROPERTY_NAME = "--aspect-ratio";
 
 type Props = {
   ratio: string | number, // eslint-disable-line
   style: Object,
-  children: Object
+  children: Element<any>
 };
 
 type State = {
@@ -16,7 +16,7 @@ type State = {
 };
 
 class AspectRatio extends PureComponent<Props, State> {
-  node: ?Element;
+  node: ?HTMLDivElement
 
   state: {
     ratio: string | number
@@ -30,7 +30,7 @@ class AspectRatio extends PureComponent<Props, State> {
 
   static defaultProps = {
     className: 'react-aspect-ratio-placeholder',
-    ratio: '1/1'
+    ratio: 1
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -49,29 +49,36 @@ class AspectRatio extends PureComponent<Props, State> {
 
       // BC for older version of React https://github.com/facebook/react/issues/6411
       // check if React support custom property AFTER
-      const customPropertyValue = node.style.getPropertyValue(CUSTOM_PROPERTY_NAME);
+      const customPropertyValue = node.style.getPropertyValue(
+        CUSTOM_PROPERTY_NAME
+      );
       if (!customPropertyValue) {
         node.style.setProperty(CUSTOM_PROPERTY_NAME, `(${this.state.ratio})`);
       }
     }
   }
 
-  render() {
+  setNode = (node: ?HTMLDivElement): void => {
+    this.node = node;
+  }
+
+  render(): Element<'div'> {
     const {
-      ratio, style, children, ...otherProps
+      ratio,
+      style,
+      children,
+      ...otherProps
     } = this.props; // eslint-disable-line no-unused-vars
 
     const newStyle = {
+      ...style,
       // https://github.com/roderickhsiao/react-aspect-ratio/commit/53ec15858ae186c41e70b8c14cc5a5b6e97cb6e3
-      [CUSTOM_PROPERTY_NAME]: `(${this.state.ratio})`,
-      ...style
+      [CUSTOM_PROPERTY_NAME]: `(${this.state.ratio})`
     };
 
     return (
       <div
-        ref={node => {
-          this.node = node;
-        }}
+        ref={this.setNode}
         style={newStyle}
         {...otherProps}
       >
