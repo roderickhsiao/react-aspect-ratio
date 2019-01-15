@@ -77,7 +77,7 @@ import AspectRatio from 'react-aspect-ratio';
   - children: single DOM child
 
 
-  <p align="center">
+  <p align="center" float="left">
     <img src="https://cloud.githubusercontent.com/assets/3906130/23882532/7e0cd586-081e-11e7-995f-005196385335.jpg" width="640" alt="aspect ratio">
     <br>
   </p>
