@@ -1,4 +1,13 @@
-# React Aspect Ratio Component
+<p align="center">
+  <h1>React Aspect Ratio</h1>
+  <br>
+  <a href="https://www.npmjs.org/package/quicklink"><img src="https://img.shields.io/npm/v/quicklink.svg?style=flat" alt="npm"></a>
+  <a href="https://unpkg.com/quicklink"><img src="https://img.badgesize.io/https://unpkg.com/quicklink/dist/quicklink.js?compression=gzip" alt="gzip size"></a>
+  <a href="https://www.npmjs.com/package/quicklink"><img src="https://img.shields.io/npm/dt/quicklink.svg" alt="downloads" ></a>
+  <a href="https://travis-ci.org/GoogleChromeLabs/quicklink"><img src="https://travis-ci.org/GoogleChromeLabs/quicklink.svg?branch=master" alt="travis"></a>
+</p>
+
+
 [![npm version](https://badgen.net/npm/v/react-aspect-ratio)](https://www.npmjs.com/package/react-aspect-ratio)
 [![CircleCI](https://circleci.com/gh/roderickhsiao/react-aspect-ratio.svg?style=svg)](https://circleci.com/gh/roderickhsiao/react-aspect-ratio)
 [![Dependencies Status](https://badgen.net/david/dep/roderickhsiao/react-aspect-ratio)](https://david-dm.org/roderickhsiao/react-aspect-ratio)
@@ -72,4 +81,7 @@ import AspectRatio from 'react-aspect-ratio';
   - children: single DOM child
 
 
-![Ratio](https://cloud.githubusercontent.com/assets/3906130/23882532/7e0cd586-081e-11e7-995f-005196385335.jpg "Ratio")
+  <p align="center">
+    <img src="https://cloud.githubusercontent.com/assets/3906130/23882532/7e0cd586-081e-11e7-995f-005196385335.jpg" width="640" alt="aspect ratio">
+    <br>
+  </p>
