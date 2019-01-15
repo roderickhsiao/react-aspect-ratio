@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="  https://user-images.githubusercontent.com/3906130/51165363-d0bede80-1854-11e9-83dc-ea4f74c3b652.png" width="200" alt="react aspect ratio">
+  <img src="  https://user-images.githubusercontent.com/3906130/51165477-22ffff80-1855-11e9-9580-7ff4309dd025.jpg" width="640" alt="react aspect ratio">
   <br>
   <a href="https://www.npmjs.org/package/react-aspect-ratio"><img src="https://img.shields.io/npm/v/react-aspect-ratio.svg?style=flat" alt="npm"></a>
   <a href="https://unpkg.com/react-aspect-ratio"><img src="https://img.badgesize.io/https://unpkg.com/react-aspect-ratio/dist/es/index.js?compression=gzip" alt="gzip size"></a>
