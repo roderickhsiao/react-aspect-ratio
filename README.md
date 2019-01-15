@@ -1,17 +1,12 @@
 <p align="center">
   <h1>React Aspect Ratio</h1>
   <br>
-  <a href="https://www.npmjs.org/package/quicklink"><img src="https://img.shields.io/npm/v/quicklink.svg?style=flat" alt="npm"></a>
-  <a href="https://unpkg.com/quicklink"><img src="https://img.badgesize.io/https://unpkg.com/quicklink/dist/quicklink.js?compression=gzip" alt="gzip size"></a>
-  <a href="https://www.npmjs.com/package/quicklink"><img src="https://img.shields.io/npm/dt/quicklink.svg" alt="downloads" ></a>
-  <a href="https://travis-ci.org/GoogleChromeLabs/quicklink"><img src="https://travis-ci.org/GoogleChromeLabs/quicklink.svg?branch=master" alt="travis"></a>
+  <a href="https://www.npmjs.org/package/react-aspect-ratio"><img src="https://img.shields.io/npm/v/react-aspect-ratio.svg?style=flat" alt="npm"></a>
+  <a href="https://unpkg.com/react-aspect-ratio"><img src="https://img.badgesize.io/https://unpkg.com/react-aspect-ratio/dist/es/index.js?compression=gzip" alt="gzip size"></a>
+  <a href="https://www.npmjs.com/package/react-aspect-ratio"><img src="https://img.shields.io/npm/dt/react-aspect-ratio.svg" alt="downloads" ></a>
+  <a href="https://circleci.com/gh/roderickhsiao/react-aspect-ratio"><img src="https://circleci.com/gh/roderickhsiao/react-aspect-ratio.svg?style=svg" alt="circleci"></a>
 </p>
 
-
-[![npm version](https://badgen.net/npm/v/react-aspect-ratio)](https://www.npmjs.com/package/react-aspect-ratio)
-[![CircleCI](https://circleci.com/gh/roderickhsiao/react-aspect-ratio.svg?style=svg)](https://circleci.com/gh/roderickhsiao/react-aspect-ratio)
-[![Dependencies Status](https://badgen.net/david/dep/roderickhsiao/react-aspect-ratio)](https://david-dm.org/roderickhsiao/react-aspect-ratio)
-[![devDependencies Status](https://badgen.net/david/dev/roderickhsiao/react-aspect-ratio)](https://david-dm.org/roderickhsiao/react-aspect-ratio?type=dev)
 
 This is a React implementation for aspect ratio placeholder preventing browser reflow before browser downloads and renders your component.
 
