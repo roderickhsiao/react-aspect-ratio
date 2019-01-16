@@ -1,5 +1,5 @@
 <p align="center">
-  <h1>React Aspect Ratio</h1>
+    <h1>React Aspect Ratio</h1>
   <img src="https://cloud.githubusercontent.com/assets/3906130/23882532/7e0cd586-081e-11e7-995f-005196385335.jpg" width="400" alt="reac aspect ratio">
   <br>
   <a href="https://www.npmjs.org/package/react-aspect-ratio"><img src="https://img.shields.io/npm/v/react-aspect-ratio.svg?style=flat" alt="npm"></a>
@@ -18,6 +18,19 @@ Inspired by [Thierry](https://twitter.com/thierrykoblentz)
 Original idea from [Sérgio Gomes](https://twitter.com/sergiomdgomes)
 
 You can also read a detail [post](https://css-tricks.com/aspect-ratio-boxes/) by [Chris Coyier](https://twitter.com/chriscoyier)
+
+## Why
+
+Most common use case is image loading. If you are not define dimensions for your image tag, browser will assume its a square size of image before image loaded. Hence you will see browser reflow your layout after image loaded.
+
+If you define a hard dimensions, it might not fit a responsive design.
+
+## How
+
+This component using what people call "Padding trick" - creating a wrapper html tag with zero height and a percentage of `padding-bottom` to perserve space. (`padding-bottom` will be percentage of your component width).
+
+This library also utilizes [CSS variable](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) for modern browser as well as CSS `calc` [API](https://developer.mozilla.org/en-US/docs/Web/CSS/calc) to minimized the style needed for different padding value.
+
 
 ## Installation
 
@@ -46,8 +59,6 @@ const RatioImage = () => (
   </AspectRatio>
 );
 ```
-
-For browser support [CSS variable](http://caniuse.com/#feat=css-variables), you can use it to wrap other elements (like iframe, video, object ...etc) as well
 
 ```js
 import AspectRatio from 'react-aspect-ratio';
@@ -81,3 +92,40 @@ import AspectRatio from 'react-aspect-ratio';
 - `ratio`: string | number
 - any other props, note that the component will add custom variable `--aspect-ratio` to component `style`
 - children: single DOM child
+
+
+### CSS (By Thierry)
+
+```css
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+[style*="--aspect-ratio"] > img {  
+  height: auto;
+} 
+@supports (--custom:property) {
+  [style*="--aspect-ratio"] {
+    position: relative;
+  }
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }  
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }  
+}
+```
+
+- We use `[style*="--aspect-ratio"]` as a hook to target the appropriate boxes
+- We stretch the inner box regardless of support for custom property
+- We make sure the height of images comes from their intrinsic ratio rather than their height attribute
+- We style the container as a containing block (so the inner box references that ancestor for its positioning)
+- We create a pseudo-element to be used with the “padding hack” (it is that element that creates the aspect ratio)
+- We use `calc()` and `var()` to calculate padding based on the value of the custom property
+- We style the inner box so it matches the dimensions of its containing block
+
