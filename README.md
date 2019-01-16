@@ -1,6 +1,5 @@
 <p align="center">
   <h1>React Aspect Ratio</h1>
-  <br>
   <img src="https://cloud.githubusercontent.com/assets/3906130/23882532/7e0cd586-081e-11e7-995f-005196385335.jpg" width="400" alt="reac aspect ratio">
   <br>
   <a href="https://www.npmjs.org/package/react-aspect-ratio"><img src="https://img.shields.io/npm/v/react-aspect-ratio.svg?style=flat" alt="npm"></a>
