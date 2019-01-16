@@ -11,6 +11,8 @@
 <hr>
 This is a React implementation for aspect ratio placeholder preventing browser reflow before browser downloads and renders your component.
 
+[Demo](https://roderickhsiao.github.io/react-aspect-ratio/)
+
 Inspired by [Thierry](https://twitter.com/thierrykoblentz)
 
 Original idea from [Sérgio Gomes](https://twitter.com/sergiomdgomes)
