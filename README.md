@@ -25,6 +25,8 @@ Most common use case is image loading. If you are not define dimensions for your
 
 If you define a hard dimensions, it might not fit a responsive design.
 
+* Chrome is developing [Intrinsic size attribute](https://www.chromestatus.com/feature/4704436815396864) which potentially will act the same as what this library does. However, its very early stage and no other vendors showing signals of development yet.
+
 ## How
 
 This component using what people call "Padding trick" - creating a wrapper html tag with zero height and a percentage of `padding-bottom` to perserve space. (`padding-bottom` will be percentage of your component width).
@@ -102,7 +104,7 @@ import AspectRatio from 'react-aspect-ratio';
 }
 [style*="--aspect-ratio"] > img {  
   height: auto;
-} 
+}
 @supports (--custom:property) {
   [style*="--aspect-ratio"] {
     position: relative;
@@ -128,4 +130,3 @@ import AspectRatio from 'react-aspect-ratio';
 - We create a pseudo-element to be used with the “padding hack” (it is that element that creates the aspect ratio)
 - We use `calc()` and `var()` to calculate padding based on the value of the custom property
 - We style the inner box so it matches the dimensions of its containing block
-
