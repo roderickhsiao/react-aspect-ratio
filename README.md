@@ -55,7 +55,7 @@ $ npm install react-aspect-ratio
 | Props       | Type          | Default                                     | Description                                                                                   |
 |-------------|---------------|---------------------------------------------|-----------------------------------------------------------------------------------------------|
 | ratio       | string/number | 1                                           | Aspect ratio of your component, could be number or string like width/height                   |
-| other props | Object        | {  style: {  --aspect-ratio: ${ratio}    }} | Any props to your React component, the library will add `--aspect-ratio` to your style object |
+| other props | Object        | ```{style: {--aspect-ratio: ${ratio}} }``` | Any props to your React component, the library will add `--aspect-ratio` to your style object |
 | children    | React Element |                                             | Single DOM element                                                                            |
 
 **You will need to `import 'react-aspect-ratio/aspect-ratio.css'`**
@@ -110,6 +110,7 @@ import AspectRatio from 'react-aspect-ratio';
     position: relative;
   }
   [style*="--aspect-ratio"]::before {
+    height: 0;
     content: "";
     display: block;
     padding-bottom: calc(100% / (var(--aspect-ratio)));
