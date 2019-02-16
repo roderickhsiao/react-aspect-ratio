@@ -21,6 +21,8 @@ You can also read a detail [post](https://css-tricks.com/aspect-ratio-boxes/) by
 
 ## Why
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/roderickhsiao/react-aspect-ratio.svg)](https://greenkeeper.io/)
+
 Most common use case is image loading. If you are not define dimensions for your image tag, browser will assume its a square size of image before image loaded. Hence you will see browser reflow your layout after image loaded.
 
 If you define a hard dimensions, it might not fit a responsive design.
