@@ -26,7 +26,9 @@
     "storybook": "start-storybook -p 9010",
     "test-watch": "npm run testonly -- --watch --watch-extensions js",
     "test": "npm run lint && npm run testonly",
-    "testonly": "jest --config jest-config.js"
+    "test:ci": "npm run lint && npm run testonly:ci",
+    "testonly": "jest --config jest-config.js",
+    "testonly:ci": "jest --config jest-config.js -u"
   },
   "devDependencies": {
     "@storybook/react": "^4.0.0",
