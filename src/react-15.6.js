@@ -1,5 +1,5 @@
 // @flow
-import React, { PureComponent, type Element } from 'react';
+import React, { Component, type Element } from 'react';
 
 const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
 
@@ -36,10 +36,7 @@ class AspectRatio extends PureComponent<Props> {
 
   render(): Element<'div'> {
     const {
-      ratio,
-      style,
-      children,
-      ...otherProps
+      ratio, style, children, ...otherProps
     } = this.props; // eslint-disable-line no-unused-vars
 
     const newStyle = {

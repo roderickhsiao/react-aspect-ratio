@@ -1,5 +1,5 @@
 // @flow
-import React, { memo, type Element } from 'react';
+import React, { type Element } from 'react';
 
 const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
 
@@ -11,10 +11,7 @@ type Props = {
 
 const AspectRatio = (props: Props) => {
   const {
-    ratio,
-    style,
-    children,
-    ...otherProps
+    ratio, style, children, ...otherProps
   } = props; // eslint-disable-line no-unused-vars
 
   const newStyle = {
@@ -28,11 +25,11 @@ const AspectRatio = (props: Props) => {
       {children}
     </div>
   );
-}
+};
 
 AspectRatio.defaultProps = {
   className: 'react-aspect-ratio-placeholder',
   ratio: 1
 };
 
-export default memo<Props>(AspectRatio);
+export default AspectRatio;
