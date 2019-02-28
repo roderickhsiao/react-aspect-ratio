@@ -97,7 +97,6 @@ import AspectRatio from 'react-aspect-ratio';
 />;
 ```
 
-
 ### CSS (By Thierry)
 
 ```css
