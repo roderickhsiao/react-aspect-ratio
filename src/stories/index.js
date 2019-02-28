@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { storiesOf, setAddon } from '@storybook/react';
 import JSXAddon from 'storybook-addon-jsx';
 
-import AspectRatio from '../index';
+import { AspectRatio } from '../index';
 
 import '../../aspect-ratio.css';
 import '../../theme.css';
