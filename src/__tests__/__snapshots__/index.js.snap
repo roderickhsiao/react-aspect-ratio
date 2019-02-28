@@ -1,5 +1,103 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Aspect Ratio React < 15.6 custom style willl be adpoted 1`] = `
+<div
+  className="react-aspect-ratio-placeholder"
+  style={
+    Object {
+      "--aspect-ratio": "(4/3)",
+      "color": "#fff",
+    }
+  }
+>
+  <img
+    alt="demo"
+    src="https://foo.bar"
+  />
+</div>
+`;
+
+exports[`Aspect Ratio React < 15.6 should render wrapper for children 1`] = `
+<div
+  className="react-aspect-ratio-placeholder"
+  style={
+    Object {
+      "--aspect-ratio": "(4/3)",
+    }
+  }
+>
+  <img
+    alt="demo"
+    src="https://foo.bar"
+  />
+</div>
+`;
+
+exports[`Aspect Ratio React < 15.6 should support number as props 1`] = `
+<div
+  className="react-aspect-ratio-placeholder"
+  style={
+    Object {
+      "--aspect-ratio": "(0.75)",
+    }
+  }
+>
+  <img
+    alt="demo"
+    src="https://foo.bar"
+  />
+</div>
+`;
+
+exports[`Aspect Ratio React > 15.6 custom style willl be adpoted 1`] = `
+<div
+  className="react-aspect-ratio-placeholder"
+  style={
+    Object {
+      "--aspect-ratio": "(4/3)",
+      "color": "#fff",
+    }
+  }
+>
+  <img
+    alt="demo"
+    src="https://foo.bar"
+  />
+</div>
+`;
+
+exports[`Aspect Ratio React > 15.6 should render wrapper for children 1`] = `
+<div
+  className="react-aspect-ratio-placeholder"
+  style={
+    Object {
+      "--aspect-ratio": "(4/3)",
+    }
+  }
+>
+  <img
+    alt="demo"
+    src="https://foo.bar"
+  />
+</div>
+`;
+
+exports[`Aspect Ratio React > 15.6 should support number as props 1`] = `
+<div
+  className="react-aspect-ratio-placeholder"
+  style={
+    Object {
+      "--aspect-ratio": "(0.75)",
+    }
+  }
+>
+  <img
+    alt="demo"
+    src="https://foo.bar"
+  />
+</div>
+`;
+
 exports[`Aspect Ratio custom style willl be adpoted 1`] = `
 <div
   className="react-aspect-ratio-placeholder"

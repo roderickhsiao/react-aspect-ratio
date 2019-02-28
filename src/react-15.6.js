@@ -9,7 +9,7 @@ type Props = {
   children: Element<any>
 };
 
-class AspectRatio extends PureComponent<Props> {
+class AspectRatio extends Component<Props> {
   node: ?HTMLDivElement = null;
 
   static defaultProps = {
