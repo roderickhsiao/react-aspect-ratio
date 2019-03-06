@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { storiesOf, setAddon } from '@storybook/react';
+import { storiesOf } from '@storybook/react';
 // import JSXAddon from 'storybook-addon-jsx';
 
 import { AspectRatio } from '../index';
@@ -58,7 +58,7 @@ const Card = ({ titleText, contentNode }) => (
   </div>
 );
 storiesOf('AspectRatio', module)
-  .addWithJSX('Image', () => (
+  .add('Image', () => (
     <Fragment>
       <PageTitle />
       <Card
@@ -77,7 +77,7 @@ storiesOf('AspectRatio', module)
       />
     </Fragment>
   ))
-  .addWithJSX('Image with number', () => (
+  .add('Image with number', () => (
     <Fragment>
       <PageTitle />
       <Card
@@ -90,7 +90,7 @@ storiesOf('AspectRatio', module)
       />
     </Fragment>
   ))
-  .addWithJSX('Background Image', () => (
+  .add('Background Image', () => (
     <Fragment>
       <PageTitle />
       <Card
@@ -108,7 +108,7 @@ storiesOf('AspectRatio', module)
       />
     </Fragment>
   ))
-  .addWithJSX('Gallery', () => {
+  .add('Gallery', () => {
     const images = [
       {
         src: 'http://pbs.twimg.com/media/CO-ghuGWEAAGsFd.jpg',
@@ -151,7 +151,7 @@ storiesOf('AspectRatio', module)
     );
   })
 
-  .addWithJSX('Iframe', () => (
+  .add('Iframe', () => (
     <Fragment>
       <PageTitle />
       <Card
