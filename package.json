@@ -1,6 +1,6 @@
 {
   "name": "react-aspect-ratio",
-  "version": "1.0.40",
+  "version": "1.0.41",
   "description": "React Aspect Ratio Component",
   "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
   "repository": {
@@ -42,7 +42,7 @@
     "babel-loader": "^8.0.5",
     "babel-preset-react-app": "^8.0.0",
     "babel-runtime": "^6.11.6",
-    "bundlesize": "^0.17.0",
+    "bundlesize": "^0.18.0",
     "eslint": "^5.11.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-flowtype": "^3.2.0",
@@ -67,6 +67,7 @@
   "engines": {
     "npm": "^3.0.0 || ^5.0.0"
   },
+  "sideEffects": false,
   "bundlesize": [
     {
       "path": "./dist/*.js",
