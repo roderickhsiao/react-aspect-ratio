@@ -11,6 +11,7 @@ type Props = {
 
 class AspectRatio extends Component<Props> {
   node: ?HTMLDivElement = null;
+  static defaultProps: Object;
 
   componentDidUpdate() {
     if (this.node) {
@@ -40,7 +41,7 @@ class AspectRatio extends Component<Props> {
       [CUSTOM_PROPERTY_NAME]: `(${ratio})`
     };
 
-    return (
+    return ( // $FlowFixMe
       <div ref={this.setNode} style={newStyle} {...otherProps}>
         {children}
       </div>

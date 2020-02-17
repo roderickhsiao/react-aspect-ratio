@@ -20,7 +20,7 @@ const AspectRatio = (props: Props) => {
     [CUSTOM_PROPERTY_NAME]: `(${ratio})`
   };
 
-  return (
+  return ( // $FlowFixMe
     <div style={newStyle} {...otherProps}>
       {children}
     </div>
