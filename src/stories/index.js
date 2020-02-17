@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 // import JSXAddon from 'storybook-addon-jsx';
 
@@ -59,12 +59,12 @@ const Card = ({ titleText, contentNode }) => (
 );
 storiesOf('AspectRatio', module)
   .add('Image', () => (
-    <Fragment>
+    <>
       <PageTitle />
       <Card
         titleText="Image with Aspect Ratio"
         contentNode={(
-          <Fragment>
+          <>
             <AspectRatio ratio="300/165" style={{ maxWidth: '300px', margin: 'auto' }}>
               <img
                 src="https://upload.wikimedia.org/wikipedia/en/7/7d/Minions_characters.png"
@@ -72,13 +72,13 @@ storiesOf('AspectRatio', module)
               />
             </AspectRatio>
             <p>{lorem}</p>
-          </Fragment>
+          </>
 )}
       />
-    </Fragment>
+    </>
   ))
   .add('Image with number', () => (
-    <Fragment>
+    <>
       <PageTitle />
       <Card
         titleText="Image with Aspect Ratio (pass number as props)"
@@ -88,10 +88,10 @@ storiesOf('AspectRatio', module)
           </AspectRatio>
 )}
       />
-    </Fragment>
+    </>
   ))
   .add('Background Image', () => (
-    <Fragment>
+    <>
       <PageTitle />
       <Card
         titleText="Background image with aspect ratio"
@@ -106,7 +106,7 @@ storiesOf('AspectRatio', module)
           />
 )}
       />
-    </Fragment>
+    </>
   ))
   .add('Gallery', () => {
     const images = [
@@ -131,7 +131,7 @@ storiesOf('AspectRatio', module)
       }
     ];
     return (
-      <Fragment>
+      <>
         <PageTitle />
         <Card
           titleText="Image Gallery with Aspect Ratio"
@@ -147,12 +147,12 @@ storiesOf('AspectRatio', module)
             </div>
 )}
         />
-      </Fragment>
+      </>
     );
   })
 
   .add('Iframe', () => (
-    <Fragment>
+    <>
       <PageTitle />
       <Card
         titleText="Iframe with aspect ratio"
@@ -167,5 +167,5 @@ storiesOf('AspectRatio', module)
           </AspectRatio>
 )}
       />
-    </Fragment>
+    </>
   ));

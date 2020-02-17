@@ -12,11 +12,6 @@ type Props = {
 class AspectRatio extends Component<Props> {
   node: ?HTMLDivElement = null;
 
-  static defaultProps = {
-    className: 'react-aspect-ratio-placeholder',
-    ratio: 1
-  };
-
   componentDidUpdate() {
     if (this.node) {
       const { node } = this;
@@ -52,5 +47,10 @@ class AspectRatio extends Component<Props> {
     );
   }
 }
+
+AspectRatio.defaultProps = {
+  className: 'react-aspect-ratio-placeholder',
+  ratio: 1
+};
 
 export default AspectRatio;
