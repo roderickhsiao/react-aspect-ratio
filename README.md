@@ -6,8 +6,6 @@
   <a href="https://unpkg.com/react-aspect-ratio"><img src="https://img.badgesize.io/https://unpkg.com/react-aspect-ratio/dist/es/index.js?compression=gzip" alt="gzip size"></a>
   <a href="https://www.npmjs.com/package/react-aspect-ratio"><img src="https://img.shields.io/npm/dt/react-aspect-ratio.svg" alt="downloads" ></a>
   <a href="https://circleci.com/gh/roderickhsiao/react-aspect-ratio"><img src="https://circleci.com/gh/roderickhsiao/react-aspect-ratio.svg?style=svg" alt="circleci"></a>
-  <a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/roderickhsiao/react-aspect-ratio.svg" alt="Greenkeeper badge"></a>
-
 </p>
 
 <hr>
