@@ -1,6 +1,6 @@
 {
   "name": "react-aspect-ratio",
-  "version": "1.0.44",
+  "version": "1.0.45",
   "description": "React Aspect Ratio Component",
   "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
   "repository": {
@@ -54,13 +54,13 @@
     "jest": "^25.1.0",
     "jest-cli": "^25.1.0",
     "jest-junit": "^10.0.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
     "react-test-renderer": "^16.0.0",
     "storybook-addon-jsx": "^7.0.0"
   },
   "peerDependencies": {
-    "react": "^0.14.7 || ^15.0.0 || ^16.0.0"
+    "react": "^0.14.7 || ^15.0.0 || ^16.0.0 || ^17.0.0"
   },
   "main": "dist/index.js",
   "module": "dist/es/index.js",
