@@ -2,6 +2,7 @@
 import React, { type Element } from 'react';
 
 const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
+const PROPERTY_NAME = 'aspect-ratio'; // browser native supports
 
 type Props = {
   ratio: string | number, // eslint-disable-line
@@ -17,7 +18,8 @@ const AspectRatio = (props: Props) => {
   const newStyle = {
     ...style,
     // https://github.com/roderickhsiao/react-aspect-ratio/commit/53ec15858ae186c41e70b8c14cc5a5b6e97cb6e3
-    [CUSTOM_PROPERTY_NAME]: `(${ratio})`
+    [CUSTOM_PROPERTY_NAME]: `(${ratio})`,
+    [PROPERTY_NAME]: ratio
   };
 
   return ( // $FlowFixMe
