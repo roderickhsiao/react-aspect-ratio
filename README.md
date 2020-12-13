@@ -25,7 +25,7 @@ Most common use case is image loading. If you are not define dimensions for your
 
 If you define a hard dimensions, it might not fit a responsive design.
 
-~~* Chrome is developing [Intrinsic size attribute](https://www.chromestatus.com/feature/4704436815396864) which potentially will act the same as what this library does. However, its very early stage and no other vendors showing signals of development yet.~~ (Spec deprecated)
+* Note: new CSS property [aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio) will be supported in Chrome 88](https://www.chromestatus.com/feature/5738050678161408), we might be able to support by using `@supports not (aspect-ratio: ratio)` for current padding trick implmentation.
 
 ## How
 
