@@ -1,29 +1,30 @@
-@supports not (aspect-ratio: 1/1) {
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+[style*="--aspect-ratio"] > img {
+  height: auto;
+}
+
+@supports (aspect-ratio: 1/1) {
   [style*="--aspect-ratio"] > :first-child {
-    width: 100%;
-  }
-  [style*="--aspect-ratio"] > img {
-    height: auto;
+    height: 100%;
   }
 }
 
-@supports (--custom:property) {
+@supports not (aspect-ratio: 1 / 1) {
   [style*="--aspect-ratio"] {
     position: relative;
+  }
+  [style*="--aspect-ratio"]::before {
+    height: 0;
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
   }
   [style*="--aspect-ratio"] > :first-child {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-  }
-}
-
-@supports ((--custom:property) and not (@supports not (aspect-ratio: 1/1)) {
-  [style*="--aspect-ratio"]::before {
-    height: 0;
-    content: "";
-    display: block;
-    padding-bottom: calc(100% / (var(--aspect-ratio)));
   }
 }
