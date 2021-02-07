@@ -64,8 +64,15 @@ $ npm install react-aspect-ratio
 
 **You will need to `import 'react-aspect-ratio/aspect-ratio.css'`**
 
+* Note
 ```js
-import AspectRatio from 'react-aspect-ratio';
+import { AspectRatio } from 'react-aspect-ratio'; // Recommended: if you are using React > 15.6
+
+import AspectRatio from 'react-aspect-ratio'; // Deprecated: if you are using React <= 15.6
+```
+
+```js
+import { AspectRatio } from 'react-aspect-ratio';
 
 const RatioImage = () => (
   <AspectRatio ratio="3/4" style={{ maxWidth: '400px' }}>
@@ -75,7 +82,7 @@ const RatioImage = () => (
 ```
 
 ```js
-import AspectRatio from 'react-aspect-ratio';
+import { AspectRatio } from 'react-aspect-ratio';
 
 const RatioIframe = () => (
   <AspectRatio ratio="560/315" style={{ maxWidth: '560px' }}>
@@ -87,7 +94,7 @@ const RatioIframe = () => (
 Can also use for background image
 
 ```js
-import AspectRatio from 'react-aspect-ratio';
+import { AspectRatio } from 'react-aspect-ratio';
 
 <AspectRatio
   ratio={0.75}
