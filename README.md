@@ -25,7 +25,7 @@ Most common use case is image loading. If you are not define dimensions for your
 
 If you define a hard dimensions, it might not fit a responsive design.
 
-* Note: new CSS property [aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio) will be supported in Chrome 88](https://www.chromestatus.com/feature/5738050678161408), we might be able to support by using `@supports not (aspect-ratio: ratio)` for current padding trick implmentation.
+* New: new CSS [aspect-ratio](https://web.dev/aspect-ratio/) property launching in Chromium 88, Firefox 87, and Safari Technology Preview 118.
 
 ## How
 
@@ -95,31 +95,43 @@ import AspectRatio from 'react-aspect-ratio';
 />;
 ```
 
-### CSS (By Thierry)
+### CSS (Inspired by Thierry)
 
 ```css
 [style*="--aspect-ratio"] > :first-child {
   width: 100%;
 }
-[style*="--aspect-ratio"] > img {  
+
+[style*="--aspect-ratio"] > img {
   height: auto;
 }
-@supports (--custom:property) {
-  [style*="--aspect-ratio"] {
-    position: relative;
-  }
+
+[style*="--aspect-ratio"] {
+  position: relative;
+}
+
+[style*="--aspect-ratio"] > :first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+[style*="--aspect-ratio"]::before {
+  content: "";
+  display: block;
+}
+
+@supports not (aspect-ratio: 1/1) {
   [style*="--aspect-ratio"]::before {
     height: 0;
-    content: "";
-    display: block;
     padding-bottom: calc(100% / (var(--aspect-ratio)));
-  }  
-  [style*="--aspect-ratio"] > :first-child {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-  }  
+  }
+}
+@supports (aspect-ratio: 1/1) {
+  [style*="--aspect-ratio"]::before {
+    aspect-ratio: calc(var(--aspect-ratio));
+  }
 }
 ```
 
@@ -127,6 +139,8 @@ import AspectRatio from 'react-aspect-ratio';
 - We stretch the inner box regardless of support for custom property
 - We make sure the height of images comes from their intrinsic ratio rather than their height attribute
 - We style the container as a containing block (so the inner box references that ancestor for its positioning)
-- We create a pseudo-element to be used with the “padding hack” (it is that element that creates the aspect ratio)
+- We create a pseudo-element to be used with
+  - native `aspect-ratio` property if browser supported
+  - the “padding hack” (it is that element that creates the aspect ratio) for browser not supporting `aspect-ratio`
 - We use `calc()` and `var()` to calculate padding based on the value of the custom property
 - We style the inner box so it matches the dimensions of its containing block
