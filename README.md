@@ -9,7 +9,9 @@
 </p>
 
 <hr>
-This is a React implementation for aspect ratio placeholder preventing browser reflow before browser downloads and renders your component. ([Cumulative Layout Shift](https://web.dev/cls/))
+This is a React implementation for aspect ratio placeholder preventing browser reflow before browser downloads and renders your component. 
+
+[Cumulative Layout Shift](https://web.dev/cls/)
 
 [Demo](https://roderickhsiao.github.io/react-aspect-ratio/)
 
