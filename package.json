@@ -1,7 +1,7 @@
 {
   "name": "react-aspect-ratio",
   "version": "1.0.47",
-  "description": "React Aspect Ratio Component",
+  "description": "React Component to maintain a consistent width-to-height ratio (aspect ratio), preventing cumulative layout shift.",
   "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
   "repository": {
     "type": "git",
@@ -9,11 +9,14 @@
   },
   "license": "MIT",
   "keywords": [
-    "react-aspect-ratio",
-    "responsive",
-    "reflow",
+    "aspect ratio",
+    "css variables",
+    "cumulative layout shift",
     "react image placeholder",
-    "css variables"
+    "react-aspect-ratio",
+    "reflow",
+    "responsive",
+    "responsive web design"
   ],
   "scripts": {
     "bundlesize": "bundlesize",
