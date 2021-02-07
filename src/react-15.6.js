@@ -1,7 +1,9 @@
 // @flow
 import React, { Component } from 'react';
+import type { Element } from 'react';
 
 const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
+const DEFAULT_CLASS_NAME = 'react-aspect-ratio-placeholder';
 
 type Props = {
   ratio: string | number, // eslint-disable-line
@@ -11,7 +13,7 @@ type Props = {
 
 class AspectRatio extends Component<Props> {
   static defaultProps = {
-    className: 'react-aspect-ratio-placeholder',
+    className: DEFAULT_CLASS_NAME,
     ratio: 1
   };
 
@@ -36,7 +38,10 @@ class AspectRatio extends Component<Props> {
 
   render() {
     const {
-      ratio, style, children, ...otherProps
+      children,
+      ratio,
+      style,
+      ...restProps
     } = this.props; // eslint-disable-line no-unused-vars
 
     const newStyle = {
@@ -45,8 +50,8 @@ class AspectRatio extends Component<Props> {
       [CUSTOM_PROPERTY_NAME]: `(${ratio})`
     };
 
-    return ( // $FlowFixMe
-      <div ref={this.setNode} style={newStyle} {...otherProps}>
+    return (
+      <div {...restProps} ref={this.setNode} style={newStyle}>
         {children}
       </div>
     );

@@ -2,6 +2,7 @@
 import React, { type Element } from 'react';
 
 const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
+const DEFAULT_CLASS_NAME = 'react-aspect-ratio-placeholder';
 
 type Props = {
   ratio: string | number, // eslint-disable-line
@@ -11,7 +12,10 @@ type Props = {
 
 const AspectRatio = (props: Props) => {
   const {
-    ratio, style, children, ...otherProps
+    children,
+    ratio,
+    style,
+    ...restProps
   } = props; // eslint-disable-line no-unused-vars
 
   const newStyle = {
@@ -20,15 +24,15 @@ const AspectRatio = (props: Props) => {
     [CUSTOM_PROPERTY_NAME]: `(${ratio})`
   };
 
-  return ( // $FlowFixMe
-    <div style={newStyle} {...otherProps}>
+  return (
+    <div {...restProps} style={newStyle}>
       {children}
     </div>
   );
 };
 
 AspectRatio.defaultProps = {
-  className: 'react-aspect-ratio-placeholder',
+  className: DEFAULT_CLASS_NAME,
   ratio: 1
 };
 
