@@ -9,11 +9,11 @@
 </p>
 
 <hr>
-This is a React implementation for aspect ratio placeholder preventing browser reflow before browser downloads and renders your component.
+This is a React implementation for aspect ratio placeholder preventing browser reflow before browser downloads and renders your component. ([Cumulative Layout Shift](https://web.dev/cls/))
 
 [Demo](https://roderickhsiao.github.io/react-aspect-ratio/)
 
-Inspired by [Thierry](https://twitter.com/thierrykoblentz)
+Inspired by [Thierry Koblentz](https://www.linkedin.com/in/thierryk/)
 
 Original idea from [Sérgio Gomes](https://twitter.com/sergiomdgomes)
 
@@ -21,7 +21,7 @@ You can also read a detail [post](https://css-tricks.com/aspect-ratio-boxes/) by
 
 ## Why
 
-Most common use case is image loading. If you are not define dimensions for your image tag, browser will assume its a square size of image before image loaded. Hence you will see browser reflow your layout after image loaded.
+Most common use case is image loading. If you are not define dimensions for your image tag, browser will assume its a square size of image before image loaded. Hence you will see browser reflow your layout (layout shift) after image loaded.
 
 If you define a hard dimensions, it might not fit a responsive design.
 
