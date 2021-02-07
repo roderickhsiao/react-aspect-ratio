@@ -34,6 +34,9 @@ Other browsers will be using what people call "Padding trick" - creating a wrapp
 
 This library also utilizes [CSS variable](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) for modern browser as well as CSS `calc` [API](https://developer.mozilla.org/en-US/docs/Web/CSS/calc) to minimized the style needed for different padding value.
 
+## Browser Support
+
+We replies on [CSS custom property](https://caniuse.com/css-variables) and CSS `calc` [function](https://caniuse.com/?search=calc).
 
 ## Installation
 
