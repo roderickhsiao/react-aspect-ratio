@@ -25,11 +25,12 @@ Most common use case is image loading. If you are not define dimensions for your
 
 If you define a hard dimensions, it might not fit a responsive design.
 
-* New: new CSS [aspect-ratio](https://web.dev/aspect-ratio/) property launching in Chromium 88, Firefox 87, and Safari Technology Preview 118.
-
 ## How
 
-This component using what people call "Padding trick" - creating a wrapper html tag with zero height and a percentage of `padding-bottom` to perserve space. (`padding-bottom` will be percentage of your component width).
+This library using a pseudo element to create space based on the aspect ratio.
+For browser supporting `aspect-ratio` property (Chromium 88, Firefox 87, and Safari Technology Preview 118), the style will be adopted to the pseudo element.
+
+Other browsers will be using what people call "Padding trick" - creating a wrapper html tag with zero height and a percentage of `padding-bottom` to perserve space. (`padding-bottom` will be percentage of your component width).
 
 This library also utilizes [CSS variable](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) for modern browser as well as CSS `calc` [API](https://developer.mozilla.org/en-US/docs/Web/CSS/calc) to minimized the style needed for different padding value.
 
