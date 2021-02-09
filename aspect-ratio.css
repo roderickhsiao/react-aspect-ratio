@@ -17,6 +17,7 @@
 [style*="--aspect-ratio"]::before {
   content: "";
   display: block;
+  width: 100%;
 }
 
 @supports not (aspect-ratio: 1/1) {
