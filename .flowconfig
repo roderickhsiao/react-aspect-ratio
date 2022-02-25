@@ -1,5 +1,5 @@
 [ignore]
-node_modules/resolve/**
+.*/node_modules/resolve*
 
 [include]
 
