@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noEmit": false,
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "target": "ESNext",
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "**/__tests__/**/*",
+    "**/stories/**/*",
+  ]
+}

@@ -1,11 +1,12 @@
 {
   "extends": [
     "airbnb",
-    "plugin:flowtype/recommended"
+    "plugin:@typescript-eslint/recommended"
   ],
   "plugins": [
-    "flowtype"
+    "@typescript-eslint"
   ],
+  "parser": "@typescript-eslint/parser",
   "rules": {
     # We use _ to define private variables and methods in clases
     "no-underscore-dangle": 0,

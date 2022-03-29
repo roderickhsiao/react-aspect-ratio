@@ -7,12 +7,7 @@
       }
     ],
     "@babel/preset-react",
-    "@babel/preset-flow"
-  ],
-  "plugins": [
-    "@babel/plugin-transform-flow-strip-types",
-    "@babel/plugin-transform-spread",
-    "@babel/plugin-proposal-class-properties"
+    "@babel/preset-typescript"
   ],
   "env": {
     "next": {
@@ -25,7 +20,7 @@
           }
         ],
         "@babel/preset-react",
-        "@babel/preset-flow"
+        "@babel/preset-typescript"
       ]
     },
     "es": {
@@ -40,7 +35,7 @@
           }
         ],
         "@babel/preset-react",
-        "@babel/preset-flow"
+        "@babel/preset-typescript"
       ]
     },
     "umd": {
@@ -53,7 +48,7 @@
           }
         ],
         "@babel/preset-react",
-        "@babel/preset-flow"
+        "@babel/preset-typescript"
       ]
     }
   }
