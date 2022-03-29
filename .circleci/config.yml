@@ -38,5 +38,5 @@ jobs:
 
       # run tests!
       - run: yarn test:ci
-      - run: yarn flow
+      - run: yarn tsc --noEmit
       - run: yarn bundlesize
