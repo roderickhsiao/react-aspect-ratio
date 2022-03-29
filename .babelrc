@@ -1,59 +1,74 @@
 {
-  "presets": [
+  "presets":[
     [
       "@babel/preset-env",
       {
-        "loose": true
+        "loose":true
       }
     ],
-    "@babel/preset-react",
-    "@babel/preset-flow"
+    [
+      "@babel/preset-react",
+      {
+        "runtime":"automatic"
+      }
+    ],
+    "@babel/preset-typescript"
   ],
-  "plugins": [
-    "@babel/plugin-transform-flow-strip-types",
-    "@babel/plugin-transform-spread",
-    "@babel/plugin-proposal-class-properties"
-  ],
-  "env": {
-    "next": {
-      "presets": [
+  "env":{
+    "next":{
+      "presets":[
         [
           "@babel/preset-env",
           {
-            "modules": false,
-            "loose": true
+            "modules":false,
+            "loose":true
           }
         ],
-        "@babel/preset-react",
-        "@babel/preset-flow"
+        [
+          "@babel/preset-react",
+          {
+            "runtime":"automatic"
+          }
+        ],
+        "@babel/preset-typescript"
       ]
     },
-    "es": {
-      "presets": [
+    "es":{
+      "presets":[
         [
           "@babel/preset-env",
           {
-            "targets": {
-              "esmodules": true
+            "targets":{
+              "esmodules":true
             },
-            "loose": true
+            "loose":true
           }
         ],
-        "@babel/preset-react",
-        "@babel/preset-flow"
+        [
+          "@babel/preset-react",
+          {
+            "runtime":"automatic"
+          }
+        ],
+        "@babel/preset-typescript"
       ]
     },
-    "umd": {
-      "presets": [
+    "umd":{
+      "presets":[
         [
           "@babel/preset-env",
           {
-            "modules": "umd",
-            "loose": true
+            "modules":"umd",
+            "loose":true
           }
         ],
-        "@babel/preset-react",
-        "@babel/preset-flow"
+        [
+          "@babel/preset-react",
+          {
+            "runtime":"automatic"
+          }
+        ],
+        "@babel/preset-typescript"
       ]
     }
   }

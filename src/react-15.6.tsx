@@ -1,23 +1,20 @@
-// @flow
-import React, { Component } from 'react';
-import type { Element } from 'react';
+import { Component } from 'react';
 
 const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
 const DEFAULT_CLASS_NAME = 'react-aspect-ratio-placeholder';
 
-type Props = {
-  ratio: string | number, // eslint-disable-line
-  style: Object,
-  children: Element<any>
-};
+type Props = React.PropsWithChildren<{
+  ratio?: string | number; // eslint-disable-line
+  style?: React.CSSProperties;
+}>;
 
 class AspectRatio extends Component<Props> {
   static defaultProps = {
     className: DEFAULT_CLASS_NAME,
-    ratio: 1
+    ratio: 1,
   };
 
-  node: ?HTMLDivElement = null;
+  node: HTMLDivElement = null;
 
   componentDidUpdate() {
     if (this.node) {
@@ -32,22 +29,19 @@ class AspectRatio extends Component<Props> {
     }
   }
 
-  setNode = (node: ?HTMLDivElement): void => {
+  setNode = (node: HTMLDivElement) => {
     this.node = node;
   };
 
   render() {
     const {
-      children,
-      ratio,
-      style,
-      ...restProps
+      children, ratio, style, ...restProps
     } = this.props; // eslint-disable-line no-unused-vars
 
     const newStyle = {
       ...style,
       // https://github.com/roderickhsiao/react-aspect-ratio/commit/53ec15858ae186c41e70b8c14cc5a5b6e97cb6e3
-      [CUSTOM_PROPERTY_NAME]: `(${ratio})`
+      [CUSTOM_PROPERTY_NAME]: `(${ratio})`,
     };
 
     return (
