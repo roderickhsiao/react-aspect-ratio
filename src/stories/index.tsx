@@ -9,25 +9,27 @@ import '../../theme.css';
 
 // setAddon(JSXAddon);
 
-const PageTitle = () => (
-  <div className="page__title">
-    <h1 className="page__title-main">
-      React Apect Ratio
-      <a
-        className="github mui-icon"
-        href="https://github.com/roderickhsiao/react-aspect-ratio"
-        target="_blank"
-        rel="noopener noreferrer"
-        title="github"
-      >
-        <span style={{ visibility: 'hidden' }}> Github </span>
-      </a>
-    </h1>
-    <p className="page__title-desc">
-      prevent reflow by preserving aspect ratio of your component
-    </p>
-  </div>
-);
+function PageTitle() {
+  return (
+    <div className="page__title">
+      <h1 className="page__title-main">
+        React Apect Ratio
+        <a
+          className="github mui-icon"
+          href="https://github.com/roderickhsiao/react-aspect-ratio"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="github"
+        >
+          <span style={{ visibility: 'hidden' }}> Github </span>
+        </a>
+      </h1>
+      <p className="page__title-desc">
+        prevent reflow by preserving aspect ratio of your component
+      </p>
+    </div>
+  );
+}
 
 const lorem = `
 Lorem ipsum dolor sit amet, ut summo disputationi duo. Ut per consulatu liberavisse. Brute putant ius ei, ei sea impetus imperdiet, usu ea impetus maiorum. Ne mel solet epicuri, quas numquam no vis. In blandit argumentum persequeris eum, quo ad vidisse meliore.
@@ -51,27 +53,29 @@ Ipsum choro cu duo, eu suas iusto complectitur duo. Eos eu ridens eruditi, mea e
 Ut quo esse noluisse, in per admodum eligendi persequeris. Vel te munere eripuit, eu prompta iuvaret propriae per, ei mel omnis suavitate. Mea at quem veri quaeque. Ea his salutatus posidonium, salutatus hendrerit vel no, nulla sonet referrentur ne pro. Mea tota constituto mediocritatem ex, ut vix nusquam molestie signiferumque.
 `;
 
-const Card = ({
+function Card({
   titleText,
   contentNode,
 }: {
   titleText: string;
   contentNode: React.ReactNode;
-}) => (
-  <div className="card">
-    <div className="card__head">
-      <h3 className="card__title">{titleText}</h3>
+}) {
+  return (
+    <div className="card">
+      <div className="card__head">
+        <h3 className="card__title">{titleText}</h3>
+      </div>
+      <div className="card__conent">{contentNode}</div>
     </div>
-    <div className="card__conent">{contentNode}</div>
-  </div>
-);
+  );
+}
 storiesOf('AspectRatio', module)
   .add('Image', () => (
     <>
       <PageTitle />
       <Card
         titleText="Image with Aspect Ratio"
-        contentNode={
+        contentNode={(
           <>
             <AspectRatio
               ratio="300/165"
@@ -84,7 +88,7 @@ storiesOf('AspectRatio', module)
             </AspectRatio>
             <p>{lorem}</p>
           </>
-        }
+        )}
       />
     </>
   ))
@@ -93,14 +97,14 @@ storiesOf('AspectRatio', module)
       <PageTitle />
       <Card
         titleText="Image with Aspect Ratio (pass number as props)"
-        contentNode={
+        contentNode={(
           <AspectRatio ratio={0.75} style={{ maxWidth: '400px' }}>
             <img
               src="https://c1.staticflickr.com/4/3896/14550191836_cc0675d906.jpg"
               alt="demo"
             />
           </AspectRatio>
-        }
+        )}
       />
     </>
   ))
@@ -109,7 +113,7 @@ storiesOf('AspectRatio', module)
       <PageTitle />
       <Card
         titleText="Background image with aspect ratio"
-        contentNode={
+        contentNode={(
           <AspectRatio
             ratio="3/4"
             style={{
@@ -119,7 +123,7 @@ storiesOf('AspectRatio', module)
               backgroundSize: 'cover',
             }}
           />
-        }
+        )}
       />
     </>
   ))
@@ -147,7 +151,7 @@ storiesOf('AspectRatio', module)
         <PageTitle />
         <Card
           titleText="Image Gallery with Aspect Ratio"
-          contentNode={
+          contentNode={(
             <div className="gallery">
               {images.map((image) => (
                 <div className="gallery__image" key={image.src}>
@@ -157,7 +161,7 @@ storiesOf('AspectRatio', module)
                 </div>
               ))}
             </div>
-          }
+          )}
         />
       </>
     );
@@ -168,7 +172,7 @@ storiesOf('AspectRatio', module)
       <PageTitle />
       <Card
         titleText="Iframe with aspect ratio"
-        contentNode={
+        contentNode={(
           <AspectRatio ratio="560/315" style={{ maxWidth: '560px' }}>
             <iframe
               src="https://www.youtube.com/embed/Sv6dMFF_yts"
@@ -177,7 +181,7 @@ storiesOf('AspectRatio', module)
               title="youtube"
             />
           </AspectRatio>
-        }
+        )}
       />
     </>
   ));
