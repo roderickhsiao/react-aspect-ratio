@@ -20,7 +20,7 @@ describe('Aspect Ratio', () => {
       expect(node).toMatchSnapshot();
     });
 
-    it('custom style will be adpoted', () => {
+    it('custom style will be adopted', () => {
       const innerImage = <img src="https://foo.bar" alt="demo" />;
       const node = renderer
         .create(
@@ -51,7 +51,7 @@ describe('Aspect Ratio', () => {
       expect(node).toMatchSnapshot();
     });
 
-    it('custom style willl be adpoted', () => {
+    it('custom style will be adopted', () => {
       const innerImage = <img src="https://foo.bar" alt="demo" />;
       const node = renderer
         .create(
