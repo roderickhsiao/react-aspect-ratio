@@ -4,7 +4,7 @@ import { AspectRatio } from '../index';
 import '../../aspect-ratio.css';
 import '../../theme.css';
 
-const PageTitle = () => {
+function PageTitle() {
   return (
     <div className="page__title">
       <h1 className="page__title-main">
@@ -24,7 +24,7 @@ const PageTitle = () => {
       </p>
     </div>
   );
-};
+}
 
 const lorem = `
 Lorem ipsum dolor sit amet, ut summo disputationi duo. Ut per consulatu liberavisse. Brute putant ius ei, ei sea impetus imperdiet, usu ea impetus maiorum. Ne mel solet epicuri, quas numquam no vis. In blandit argumentum persequeris eum, quo ad vidisse meliore.
@@ -48,13 +48,13 @@ Ipsum choro cu duo, eu suas iusto complectitur duo. Eos eu ridens eruditi, mea e
 Ut quo esse noluisse, in per admodum eligendi persequeris. Vel te munere eripuit, eu prompta iuvaret propriae per, ei mel omnis suavitate. Mea at quem veri quaeque. Ea his salutatus posidonium, salutatus hendrerit vel no, nulla sonet referrentur ne pro. Mea tota constituto mediocritatem ex, ut vix nusquam molestie signiferumque.
 `;
 
-const Card = ({
+function Card({
   titleText,
   contentNode,
 }: {
   titleText: string;
   contentNode: React.ReactNode;
-}) => {
+}) {
   return (
     <div className="card">
       <div className="card__head">
@@ -63,77 +63,83 @@ const Card = ({
       <div className="card__conent">{contentNode}</div>
     </div>
   );
-};
+}
 
 export default {
   title: 'Aspect Ratio',
   component: AspectRatio,
 };
 
-export const ImageStringAsRatio = () => (
-  <>
-    <PageTitle />
-    <Card
-      titleText="Image with Aspect Ratio"
-      contentNode={
-        <>
-          <AspectRatio
-            ratio="300/165"
-            style={{ maxWidth: '300px', margin: 'auto' }}
-          >
+export function ImageStringAsRatio() {
+  return (
+    <>
+      <PageTitle />
+      <Card
+        titleText="Image with Aspect Ratio"
+        contentNode={(
+          <>
+            <AspectRatio
+              ratio="300/165"
+              style={{ maxWidth: '300px', margin: 'auto' }}
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/en/7/7d/Minions_characters.png"
+                alt="demo"
+              />
+            </AspectRatio>
+            <p>{lorem}</p>
+          </>
+      )}
+      />
+    </>
+  );
+}
+
+ImageStringAsRatio.storyName = 'Image (string as props)';
+
+export function ImageNumberAsRatio() {
+  return (
+    <>
+      <PageTitle />
+      <Card
+        titleText="Image with Aspect Ratio (pass number as props)"
+        contentNode={(
+          <AspectRatio ratio={0.75} style={{ maxWidth: '400px' }}>
             <img
-              src="https://upload.wikimedia.org/wikipedia/en/7/7d/Minions_characters.png"
+              src="https://c1.staticflickr.com/4/3896/14550191836_cc0675d906.jpg"
               alt="demo"
             />
           </AspectRatio>
-          <p>{lorem}</p>
-        </>
-      }
-    />
-  </>
-);
+      )}
+      />
+    </>
+  );
+}
+ImageNumberAsRatio.storyName = 'Image (number as props)';
 
-ImageStringAsRatio.storyName = 'Image (string as props)'
-
-export const ImageNumberAsRatio = () => (
-  <>
-    <PageTitle />
-    <Card
-      titleText="Image with Aspect Ratio (pass number as props)"
-      contentNode={
-        <AspectRatio ratio={0.75} style={{ maxWidth: '400px' }}>
-          <img
-            src="https://c1.staticflickr.com/4/3896/14550191836_cc0675d906.jpg"
-            alt="demo"
-          />
-        </AspectRatio>
-      }
-    />
-  </>
-);
-ImageNumberAsRatio.storyName = 'Image (number as props)'
-
-export const BackgroundImage = () => (
-  <>
-    <PageTitle />
-    <Card
-      titleText="Background image with aspect ratio"
-      contentNode={
-        <AspectRatio
-          ratio="3/4"
-          style={{
-            maxWidth: '300px',
-            backgroundImage:
+export function BackgroundImage() {
+  return (
+    <>
+      <PageTitle />
+      <Card
+        titleText="Background image with aspect ratio"
+        contentNode={(
+          <AspectRatio
+            ratio="3/4"
+            style={{
+              maxWidth: '300px',
+              backgroundImage:
               'url(https://c1.staticflickr.com/4/3896/14550191836_cc0675d906.jpg)',
-            backgroundSize: 'cover',
-          }}
-        />
-      }
-    />
-  </>
-);
+              backgroundSize: 'cover',
+            }}
+          />
+      )}
+      />
+    </>
+  );
+}
 
-export const Gallery = () => {
+export function Gallery() {
   const images = [
     {
       src: 'http://pbs.twimg.com/media/CO-ghuGWEAAGsFd.jpg',
@@ -157,7 +163,7 @@ export const Gallery = () => {
       <PageTitle />
       <Card
         titleText="Image Gallery with Aspect Ratio"
-        contentNode={
+        contentNode={(
           <div className="gallery">
             {images.map((image) => (
               <div className="gallery__image" key={image.src}>
@@ -167,29 +173,31 @@ export const Gallery = () => {
               </div>
             ))}
           </div>
-        }
+        )}
       />
     </>
   );
-};
+}
 
-export const IFrame = () => (
-  <>
-    <PageTitle />
-    <Card
-      titleText="Iframe with aspect ratio"
-      contentNode={
-        <AspectRatio ratio="560/315" style={{ maxWidth: '560px' }}>
-          <iframe
-            src="https://www.youtube.com/embed/Sv6dMFF_yts"
-            frameBorder="0"
-            allowFullScreen
-            title="youtube"
-          />
-        </AspectRatio>
-      }
-    />
-  </>
-);
+export function IFrame() {
+  return (
+    <>
+      <PageTitle />
+      <Card
+        titleText="Iframe with aspect ratio"
+        contentNode={(
+          <AspectRatio ratio="560/315" style={{ maxWidth: '560px' }}>
+            <iframe
+              src="https://www.youtube.com/embed/Sv6dMFF_yts"
+              frameBorder="0"
+              allowFullScreen
+              title="youtube"
+            />
+          </AspectRatio>
+      )}
+      />
+    </>
+  );
+}
 
 IFrame.storyName = 'iFrame';

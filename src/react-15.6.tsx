@@ -35,7 +35,9 @@ class AspectRatio extends Component<Props> {
   };
 
   render() {
-    const { className, children, ratio, style, ...restProps } = this.props; // eslint-disable-line no-unused-vars
+    const {
+      className, children, ratio, style, ...restProps
+    } = this.props; // eslint-disable-line no-unused-vars
 
     const newStyle = {
       ...style,
