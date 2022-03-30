@@ -7,7 +7,7 @@ type Props = React.PropsWithChildren<{
   style?: React.CSSProperties;
 }>;
 
-function AspectRatio(props: Props) {
+const AspectRatio = (props: Props) => {
   const {
     className = DEFAULT_CLASS_NAME,
     children,
@@ -27,6 +27,6 @@ function AspectRatio(props: Props) {
       {children}
     </div>
   );
-}
+};
 
 export default AspectRatio;

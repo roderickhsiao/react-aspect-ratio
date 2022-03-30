@@ -1,15 +1,10 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-// import JSXAddon from 'storybook-addon-jsx';
-
 import { AspectRatio } from '../index';
 
 import '../../aspect-ratio.css';
 import '../../theme.css';
 
-// setAddon(JSXAddon);
-
-function PageTitle() {
+const PageTitle = () => {
   return (
     <div className="page__title">
       <h1 className="page__title-main">
@@ -29,7 +24,7 @@ function PageTitle() {
       </p>
     </div>
   );
-}
+};
 
 const lorem = `
 Lorem ipsum dolor sit amet, ut summo disputationi duo. Ut per consulatu liberavisse. Brute putant ius ei, ei sea impetus imperdiet, usu ea impetus maiorum. Ne mel solet epicuri, quas numquam no vis. In blandit argumentum persequeris eum, quo ad vidisse meliore.
@@ -53,13 +48,13 @@ Ipsum choro cu duo, eu suas iusto complectitur duo. Eos eu ridens eruditi, mea e
 Ut quo esse noluisse, in per admodum eligendi persequeris. Vel te munere eripuit, eu prompta iuvaret propriae per, ei mel omnis suavitate. Mea at quem veri quaeque. Ea his salutatus posidonium, salutatus hendrerit vel no, nulla sonet referrentur ne pro. Mea tota constituto mediocritatem ex, ut vix nusquam molestie signiferumque.
 `;
 
-function Card({
+const Card = ({
   titleText,
   contentNode,
 }: {
   titleText: string;
   contentNode: React.ReactNode;
-}) {
+}) => {
   return (
     <div className="card">
       <div className="card__head">
@@ -68,120 +63,133 @@ function Card({
       <div className="card__conent">{contentNode}</div>
     </div>
   );
-}
-storiesOf('AspectRatio', module)
-  .add('Image', () => (
-    <>
-      <PageTitle />
-      <Card
-        titleText="Image with Aspect Ratio"
-        contentNode={(
-          <>
-            <AspectRatio
-              ratio="300/165"
-              style={{ maxWidth: '300px', margin: 'auto' }}
-            >
-              <img
-                src="https://upload.wikimedia.org/wikipedia/en/7/7d/Minions_characters.png"
-                alt="demo"
-              />
-            </AspectRatio>
-            <p>{lorem}</p>
-          </>
-        )}
-      />
-    </>
-  ))
-  .add('Image with number', () => (
-    <>
-      <PageTitle />
-      <Card
-        titleText="Image with Aspect Ratio (pass number as props)"
-        contentNode={(
-          <AspectRatio ratio={0.75} style={{ maxWidth: '400px' }}>
+};
+
+export default {
+  title: 'Aspect Ratio',
+  component: AspectRatio,
+};
+
+export const ImageStringAsRatio = () => (
+  <>
+    <PageTitle />
+    <Card
+      titleText="Image with Aspect Ratio"
+      contentNode={
+        <>
+          <AspectRatio
+            ratio="300/165"
+            style={{ maxWidth: '300px', margin: 'auto' }}
+          >
             <img
-              src="https://c1.staticflickr.com/4/3896/14550191836_cc0675d906.jpg"
+              src="https://upload.wikimedia.org/wikipedia/en/7/7d/Minions_characters.png"
               alt="demo"
             />
           </AspectRatio>
-        )}
-      />
-    </>
-  ))
-  .add('Background Image', () => (
-    <>
-      <PageTitle />
-      <Card
-        titleText="Background image with aspect ratio"
-        contentNode={(
-          <AspectRatio
-            ratio="3/4"
-            style={{
-              maxWidth: '300px',
-              backgroundImage:
-                'url(https://c1.staticflickr.com/4/3896/14550191836_cc0675d906.jpg)',
-              backgroundSize: 'cover',
-            }}
-          />
-        )}
-      />
-    </>
-  ))
-  .add('Gallery', () => {
-    const images = [
-      {
-        src: 'http://pbs.twimg.com/media/CO-ghuGWEAAGsFd.jpg',
-        ratio: '261/393',
-      },
-      {
-        src: 'http://static.boredpanda.com/blog/wp-content/uploads/2015/04/bulldog-puppy-cute-dog-photography-23__605.jpg',
-        ratio: '550/393',
-      },
-      {
-        src: 'http://static.boredpanda.com/blog/wp-content/uploads/2015/04/bulldog-puppy-cute-dog-photography-5__605.jpg',
-        ratio: '599/393',
-      },
-      {
-        src: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQikQmH0BSHHpjcqFkyZr5FqMXuwONleKSsMRmcz-L-bLJHmyxgqw',
-        ratio: '500/377',
-      },
-    ];
-    return (
-      <>
-        <PageTitle />
-        <Card
-          titleText="Image Gallery with Aspect Ratio"
-          contentNode={(
-            <div className="gallery">
-              {images.map((image) => (
-                <div className="gallery__image" key={image.src}>
-                  <AspectRatio ratio={image.ratio}>
-                    <img src={image.src} alt="demo" />
-                  </AspectRatio>
-                </div>
-              ))}
-            </div>
-          )}
-        />
-      </>
-    );
-  })
+          <p>{lorem}</p>
+        </>
+      }
+    />
+  </>
+);
 
-  .add('Iframe', () => (
+ImageStringAsRatio.storyName = 'Image (string as props)'
+
+export const ImageNumberAsRatio = () => (
+  <>
+    <PageTitle />
+    <Card
+      titleText="Image with Aspect Ratio (pass number as props)"
+      contentNode={
+        <AspectRatio ratio={0.75} style={{ maxWidth: '400px' }}>
+          <img
+            src="https://c1.staticflickr.com/4/3896/14550191836_cc0675d906.jpg"
+            alt="demo"
+          />
+        </AspectRatio>
+      }
+    />
+  </>
+);
+ImageNumberAsRatio.storyName = 'Image (number as props)'
+
+export const BackgroundImage = () => (
+  <>
+    <PageTitle />
+    <Card
+      titleText="Background image with aspect ratio"
+      contentNode={
+        <AspectRatio
+          ratio="3/4"
+          style={{
+            maxWidth: '300px',
+            backgroundImage:
+              'url(https://c1.staticflickr.com/4/3896/14550191836_cc0675d906.jpg)',
+            backgroundSize: 'cover',
+          }}
+        />
+      }
+    />
+  </>
+);
+
+export const Gallery = () => {
+  const images = [
+    {
+      src: 'http://pbs.twimg.com/media/CO-ghuGWEAAGsFd.jpg',
+      ratio: '261/393',
+    },
+    {
+      src: 'http://static.boredpanda.com/blog/wp-content/uploads/2015/04/bulldog-puppy-cute-dog-photography-23__605.jpg',
+      ratio: '550/393',
+    },
+    {
+      src: 'http://static.boredpanda.com/blog/wp-content/uploads/2015/04/bulldog-puppy-cute-dog-photography-5__605.jpg',
+      ratio: '599/393',
+    },
+    {
+      src: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQikQmH0BSHHpjcqFkyZr5FqMXuwONleKSsMRmcz-L-bLJHmyxgqw',
+      ratio: '500/377',
+    },
+  ];
+  return (
     <>
       <PageTitle />
       <Card
-        titleText="Iframe with aspect ratio"
-        contentNode={(
-          <AspectRatio ratio="560/315" style={{ maxWidth: '560px' }}>
-            <iframe
-              src="https://www.youtube.com/embed/Sv6dMFF_yts"
-              frameBorder="0"
-              allowFullScreen
-              title="youtube"
-            />
-          </AspectRatio>
-        )}
+        titleText="Image Gallery with Aspect Ratio"
+        contentNode={
+          <div className="gallery">
+            {images.map((image) => (
+              <div className="gallery__image" key={image.src}>
+                <AspectRatio ratio={image.ratio}>
+                  <img src={image.src} alt="demo" />
+                </AspectRatio>
+              </div>
+            ))}
+          </div>
+        }
       />
     </>
-  ));
+  );
+};
+
+export const IFrame = () => (
+  <>
+    <PageTitle />
+    <Card
+      titleText="Iframe with aspect ratio"
+      contentNode={
+        <AspectRatio ratio="560/315" style={{ maxWidth: '560px' }}>
+          <iframe
+            src="https://www.youtube.com/embed/Sv6dMFF_yts"
+            frameBorder="0"
+            allowFullScreen
+            title="youtube"
+          />
+        </AspectRatio>
+      }
+    />
+  </>
+);
+
+IFrame.storyName = 'iFrame';

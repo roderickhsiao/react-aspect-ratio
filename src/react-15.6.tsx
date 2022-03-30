@@ -4,7 +4,8 @@ const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
 const DEFAULT_CLASS_NAME = 'react-aspect-ratio-placeholder';
 
 type Props = React.PropsWithChildren<{
-  ratio?: string | number; // eslint-disable-line
+  className?: string;
+  ratio?: string | number;
   style?: React.CSSProperties;
 }>;
 
@@ -34,9 +35,7 @@ class AspectRatio extends Component<Props> {
   };
 
   render() {
-    const {
-      children, ratio, style, ...restProps
-    } = this.props; // eslint-disable-line no-unused-vars
+    const { className, children, ratio, style, ...restProps } = this.props; // eslint-disable-line no-unused-vars
 
     const newStyle = {
       ...style,
@@ -45,7 +44,12 @@ class AspectRatio extends Component<Props> {
     };
 
     return (
-      <div {...restProps} ref={this.setNode} style={newStyle}>
+      <div
+        className={className}
+        ref={this.setNode}
+        style={newStyle}
+        {...restProps}
+      >
         {children}
       </div>
     );
