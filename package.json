@@ -23,7 +23,7 @@
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
     "postpublish": "npm run publish-storybook",
-    "prepublish": ". ./.scripts/prepublish.sh && tsc --build tsconfig.publish.json",
+    "prepublish": ". ./.scripts/prepublish.sh",
     "publish-storybook": "bash .scripts/publish_storybook.sh",
     "storybook": "start-storybook -p 9010",
     "test-watch": "npm run testonly -- --watch --watch-extensions js,ts",
