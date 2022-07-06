@@ -96,9 +96,11 @@ body {
   column-gap: 1.5em;
   font-size: .85em;
 }
+
 .gallery__image {
   background-color: #eee;
   display: inline-block;
   margin: 0 0 1em;
+  position: relative;
   width: 100%;
 }
