@@ -9,4 +9,4 @@ interface IProps {
 
 declare class AspectRatioClassComponent extends React.Component<IProps> {}
 export default AspectRatioClassComponent;
-export const AspectRatio: React.FC<Props> = () => React.ReactElement;
+export const AspectRatio: React.FC<IProps>;
