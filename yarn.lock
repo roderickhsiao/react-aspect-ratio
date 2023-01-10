@@ -1581,7 +1581,7 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-docs@^7.0.0-beta.24":
+"@storybook/addon-docs@next":
   version "7.0.0-beta.24"
   resolved "https://registry.yarnpkg.com/@storybook/addon-docs/-/addon-docs-7.0.0-beta.24.tgz#d6967a6c9d97a4968c852e4d98adea9641038e76"
   integrity sha512-GzrH5IyyQsfJ34YEnT/9jWab/VVmJXRD8BNkfjJqIn2RuNwyb+E12NqTOgaZlIqyWCsmsEXtZzwWdFD5sBxp0A==
@@ -2099,7 +2099,7 @@
     react-docgen-typescript "^2.1.1"
     tslib "^2.0.0"
 
-"@storybook/react-webpack5@^7.0.0-beta.24":
+"@storybook/react-webpack5@next":
   version "7.0.0-beta.24"
   resolved "https://registry.yarnpkg.com/@storybook/react-webpack5/-/react-webpack5-7.0.0-beta.24.tgz#62e8035606d127cfe5d8ff74e16c0804ee9ada30"
   integrity sha512-HR1taP/O6F85KgwAJqEYATBDI3T9oZrJ+9FEwqxog0K6cKqt+ifF8V8Z1+vJCIzLm1tLns2kBFvrYwjAlLY8mg==
@@ -2109,7 +2109,7 @@
     "@storybook/react" "7.0.0-beta.24"
     "@types/node" "^16.0.0"
 
-"@storybook/react@7.0.0-beta.24", "@storybook/react@^7.0.0-beta.24":
+"@storybook/react@7.0.0-beta.24", "@storybook/react@next":
   version "7.0.0-beta.24"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-7.0.0-beta.24.tgz#55f7e9242b5a148d154b0396362cb2e8abee8dab"
   integrity sha512-9Si4B6Err5XIJwMYTz9GY5yuw0mBYqOLzb27d+cv/bB7lbaWnfg/MkBPxWT2ym6u07vvS5VUF8p1CM92OenmSQ==
@@ -8580,7 +8580,7 @@ store2@^2.14.2:
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.14.2.tgz#56138d200f9fe5f582ad63bc2704dbc0e4a45068"
   integrity sha512-siT1RiqlfQnGqgT/YzXVUNsom9S0H1OX+dpdGN1xkyYATo4I6sep5NmsRD/40s3IIOvlCq6akxkqG82urIZW1w==
 
-storybook@^7.0.0-beta.24:
+storybook@next:
   version "7.0.0-beta.24"
   resolved "https://registry.yarnpkg.com/storybook/-/storybook-7.0.0-beta.24.tgz#67cee9bc58764e093cecaa434e61ece4f22aff58"
   integrity sha512-4IA4DV0pUSWk6HwmxuP5aflQAe7GV6ATdhUL0xGeTIC2gATPuEpZFddoxOG2B7iDKx7r63J00lj36VCysN4E8g==
