@@ -1,13 +1,9 @@
 import { Component } from 'react';
 
+import type { Props } from './types';
+
 const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
 const DEFAULT_CLASS_NAME = 'react-aspect-ratio-placeholder';
-
-type Props = React.PropsWithChildren<{
-  className?: string;
-  ratio?: string | number;
-  style?: React.CSSProperties;
-}>;
 
 class AspectRatio extends Component<Props> {
   static defaultProps = {
