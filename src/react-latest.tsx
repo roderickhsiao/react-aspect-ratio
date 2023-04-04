@@ -1,9 +1,10 @@
+import { forwardRef } from 'react';
 import type { Props } from './types';
 
 const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
 const DEFAULT_CLASS_NAME = 'react-aspect-ratio-placeholder';
 
-function AspectRatio(props: Props) {
+const AspectRatio = forwardRef<HTMLDivElement, Props>((props, ref) => {
   const {
     className = DEFAULT_CLASS_NAME,
     children,
@@ -19,10 +20,10 @@ function AspectRatio(props: Props) {
   } as React.CSSProperties;
 
   return (
-    <div className={className} style={newStyle} {...restProps}>
+    <div className={className} style={newStyle} ref={ref} {...restProps}>
       {children}
     </div>
   );
-}
+});
 
 export default AspectRatio;
