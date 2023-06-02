@@ -8,7 +8,9 @@
 </p>
 
 <hr>
-This is a React implementation that addresses the issue of browser reflow by providing an aspect ratio placeholder. It aims to prevent layout shifts, particularly in cases where components are being downloaded and rendered by the browser.
+
+Tiny React library to addresses the issue of browser reflow by providing an aspect ratio placeholder. It aims to prevent layout shifts, particularly in cases where components are being downloaded and rendered by the browser.
+
 
 The concept of preventing [Cumulative Layout Shift (CLS)](https://web.dev/cls/) is discussed in the article linked: Cumulative Layout Shift. It explains the importance of avoiding layout shifts to improve user experience.
 
