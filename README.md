@@ -28,7 +28,7 @@ To prevent layout shifts, it is recommended to define the dimensions of the imag
 
 ## How
 
-This library employs a clever technique to create space based on the aspect ratio of an element. It utilizes a pseudo-element to achieve this effect, taking advantage of the (`aspect-ratio`)[https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio] property available in browsers like Chromium 88, Firefox 87, and Safari Technology Preview 118.
+This library employs a clever technique to create space based on the aspect ratio of an element. It utilizes a pseudo-element to achieve this effect, taking advantage of the [`aspect-ratio`](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio) property available in browsers like Chromium 88, Firefox 87, and Safari Technology Preview 118.
 
 For browsers that do not support the `aspect-ratio` property, the library employs a technique commonly known as the "Padding trick." It creates a wrapper HTML tag with a height of zero and applies a percentage value to the padding-bottom property to preserve space. The padding-bottom value is calculated as a percentage of the component's width.
 
