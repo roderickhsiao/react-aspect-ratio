@@ -8,32 +8,31 @@
 </p>
 
 <hr>
-This is a React implementation for aspect ratio placeholder preventing browser reflow before browser downloads and renders your component. 
+This is a React implementation that addresses the issue of browser reflow by providing an aspect ratio placeholder. It aims to prevent layout shifts, particularly in cases where components are being downloaded and rendered by the browser.
 
-[Cumulative Layout Shift](https://web.dev/cls/)
+The concept of preventing [Cumulative Layout Shift (CLS)](https://web.dev/cls/) is discussed in the article linked: Cumulative Layout Shift. It explains the importance of avoiding layout shifts to improve user experience.
 
-[Demo](https://roderickhsiao.github.io/react-aspect-ratio/)
+You can see a live demonstration of the React aspect ratio placeholder implementation at this link: [Demo](https://roderickhsiao.github.io/react-aspect-ratio/).
 
-Inspired by [Thierry Koblentz](https://www.linkedin.com/in/thierryk/)
+The implementation was inspired by [Thierry Koblentz](https://www.linkedin.com/in/thierryk/), a recognized expert in web development and design.
 
-Original idea from [Sérgio Gomes](https://twitter.com/sergiomdgomes)
+The original idea for this implementation came from [Sérgio Gomes](https://twitter.com/sergiomdgomes).
 
-You can also read a detail [post](https://css-tricks.com/aspect-ratio-boxes/) by [Chris Coyier](https://twitter.com/chriscoyier)
+For more in-depth information on aspect ratio boxes and related techniques, you can refer to the detailed post by Chris Coyier, a prominent figure in the web development community. The post can be found here: [Post](https://css-tricks.com/aspect-ratio-boxes/). Chris Coyier's Twitter profile is also linked for further reference: [Chris Coyier](https://twitter.com/chriscoyier).
 
 ## Why
 
-Most common use case is image loading. If you are not define dimensions for your image tag, browser will assume its a square size of image before image loaded. Hence you will see browser reflow your layout (layout shift) after image loaded.
+The most common use case for image loading is when you include an image tag without specifying its dimensions. In such cases, the browser will assume a square size for the image before it is fully loaded, which can result in a layout shift or reflow once the image is loaded.
 
-If you define a hard dimensions, it might not fit a responsive design.
+To prevent layout shifts, it is recommended to define the dimensions of the image explicitly. However, it's important to note that if you hardcode fixed dimensions, it may not adapt well to responsive designs where the layout needs to adjust dynamically based on different screen sizes and orientations.
 
 ## How
 
-This library using a pseudo element to create space based on the aspect ratio.
-For browser supporting `aspect-ratio` property (Chromium 88, Firefox 87, and Safari Technology Preview 118), the style will be adopted to the pseudo element.
+This library employs a clever technique to create space based on the aspect ratio of an element. It utilizes a pseudo-element to achieve this effect, taking advantage of the (`aspect-ratio`)[https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio] property available in browsers like Chromium 88, Firefox 87, and Safari Technology Preview 118.
 
-Other browsers will be using what people call "Padding trick" - creating a wrapper html tag with zero height and a percentage of `padding-bottom` to perserve space. (`padding-bottom` will be percentage of your component width).
+For browsers that do not support the `aspect-ratio` property, the library employs a technique commonly known as the "Padding trick." It creates a wrapper HTML tag with a height of zero and applies a percentage value to the padding-bottom property to preserve space. The padding-bottom value is calculated as a percentage of the component's width.
 
-This library also utilizes [CSS variable](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables) for modern browser as well as CSS `calc` [API](https://developer.mozilla.org/en-US/docs/Web/CSS/calc) to minimized the style needed for different padding value.
+To ensure compatibility and maintain a clean codebase, the library also utilizes [CSS variable](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables), available in modern browsers, and the CSS `calc` [API](https://developer.mozilla.org/en-US/docs/Web/CSS/calc). These features help minimize the amount of styling required for different padding values, resulting in a more efficient implementation.
 
 ## Browser Support
 
