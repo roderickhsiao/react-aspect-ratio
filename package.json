@@ -1,6 +1,6 @@
 {
   "name": "react-aspect-ratio",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "React Component to maintain a consistent width-to-height ratio (aspect ratio), preventing cumulative layout shift.",
   "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
   "repository": {
@@ -37,6 +37,8 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/plugin-transform-typescript": "^7.16.8",
+    "@babel/preset-env": "^7.24.5",
+    "@babel/preset-typescript": "^7.24.1",
     "@storybook/addon-docs": "^7.0.0",
     "@storybook/react": "^7.0.0",
     "@storybook/react-webpack5": "^7.0.0",
