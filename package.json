@@ -20,8 +20,8 @@
   ],
   "scripts": {
     "bundlesize": "bundlesize",
-    "lint": "eslint src",
-    "lintfix": "eslint src --fix",
+    "lint": "eslint",
+    "lintfix": "eslint --fix",
     "postpublish": "npm run publish-storybook",
     "prepublish": ". ./.scripts/prepublish.sh",
     "publish-storybook": "bash .scripts/publish_storybook.sh",
