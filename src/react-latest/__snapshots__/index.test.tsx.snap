@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AspectRatio Component should render correctly 1`] = `
+<div
+  class="react-aspect-ratio-placeholder"
+  style="--aspect-ratio: (1);"
+>
+  Content
+</div>
+`;

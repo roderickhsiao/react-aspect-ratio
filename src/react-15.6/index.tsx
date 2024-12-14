@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-import type { Props } from './types';
+import type { Props } from '../types';
 
 const CUSTOM_PROPERTY_NAME = '--aspect-ratio';
 const DEFAULT_CLASS_NAME = 'react-aspect-ratio-placeholder';
