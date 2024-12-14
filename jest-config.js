@@ -4,4 +4,5 @@ module.exports = {
   },
   reporters: ['default', 'jest-junit'],
   setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
+  testEnvironment: "jsdom"
 };
