@@ -68,7 +68,7 @@
     "jest-junit": "^15.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-test-renderer": "^18.0.0",
+    "react-test-renderer": "^19.0.0",
     "storybook": "^8.4.7",
     "ts-loader": "^9.2.8",
     "typescript": "^5.0.0"
