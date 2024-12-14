@@ -12,6 +12,7 @@
     "outDir": "dist",
     "skipLibCheck": true,
     "target": "ESNext",
+    "types": ["@testing-library/jest-dom"]
   },
   "include": [
     "src/**/*"

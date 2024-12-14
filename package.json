@@ -44,6 +44,8 @@
     "@storybook/addon-webpack5-compiler-babel": "^3.0.3",
     "@storybook/react": "^8.4.7",
     "@storybook/react-webpack5": "^8.4.7",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
     "@types/jest": "^29.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
@@ -68,7 +70,6 @@
     "jest-junit": "^15.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-test-renderer": "^19.0.0",
     "storybook": "^8.4.7",
     "ts-loader": "^9.2.8",
     "typescript": "^5.0.0"
