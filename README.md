@@ -42,8 +42,9 @@ We replies on [CSS custom property](https://caniuse.com/css-variables) and CSS `
 
 ## Requirements
 
-React 19 or later. `ref` is passed through as a regular prop, so the component no longer wraps itself
-in `forwardRef` — a pattern that only works on React 19+.
+React 19 or later. React 19 passes `ref` to function components as an ordinary prop, so the
+component no longer needs a `forwardRef` wrapper — `ref` reaches the underlying `div` through
+`...restProps` like any other prop.
 
 If you are on React 18 or older, stay on `react-aspect-ratio@1.x`.
 
@@ -80,7 +81,7 @@ $ npm install react-aspect-ratio
 
 **You will need to `import 'react-aspect-ratio/aspect-ratio.css'`**
 
-Both a named and a default export are available, they are the same component:
+Both a named and a default export are available; they are the same component:
 
 ```js
 import { AspectRatio } from 'react-aspect-ratio';
