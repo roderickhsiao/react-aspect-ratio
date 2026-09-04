@@ -56,13 +56,11 @@ for the full guide.
 
 ## Installation
 
-via [yarn](https://yarnpkg.com/en/docs)
-
 ```
-$ yarn add react-aspect-ratio
+$ pnpm add react-aspect-ratio
 ```
 
-or via [npm](https://docs.npmjs.com/)
+or
 
 ```
 $ npm install react-aspect-ratio
