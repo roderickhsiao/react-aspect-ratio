@@ -1,3 +1,5 @@
-export type Props = React.ComponentProps<'div'> & {
+import type { ComponentProps } from 'react';
+
+export type Props = ComponentProps<'div'> & {
   ratio?: string | number;
 };
