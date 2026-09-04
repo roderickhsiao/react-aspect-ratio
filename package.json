@@ -1,6 +1,6 @@
 {
   "name": "react-aspect-ratio",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "React Component to maintain a consistent width-to-height ratio (aspect ratio), preventing cumulative layout shift.",
   "author": "Roderick Hsiao <roderickhsiao@gmail.com>",
   "repository": {
@@ -81,6 +81,12 @@
   "peerDependencies": {
     "react": ">=19.0.0"
   },
+  "files": [
+    "dist",
+    "aspect-ratio.css",
+    "aspect-ratio.js",
+    "MIGRATION.md"
+  ],
   "main": "dist/index.js",
   "module": "dist/es/index.js",
   "types": "dist/index.d.ts",
