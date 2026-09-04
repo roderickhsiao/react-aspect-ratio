@@ -1,5 +1,11 @@
 {
   "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // Babel emits the JS for every target (see .scripts/prepublish.sh). tsc runs
+    // afterwards and shares this outDir, so without this it would overwrite
+    // dist/index.js with its own ESNext emit.
+    "emitDeclarationOnly": true
+  },
   "exclude": [
     "**/*.test.*",
     "**/stories/**/*"
