@@ -6,6 +6,10 @@
 # Do not modify this file.
 # Use `.scripts/user/prepublish.sh instead`.
 
+# CI runs this as its Build step; without -e a failing babel or tsc invocation is
+# masked by the next command succeeding and the step exits 0 on a broken build.
+set -e
+
 echo "=> Transpiling 'src' into ES5 ..."
 echo ""
 rm -rf ./dist

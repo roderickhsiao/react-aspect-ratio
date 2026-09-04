@@ -12,5 +12,6 @@ src
 theme.css
 theme.js
 yarn-error.log
-yarn.lock
+pnpm-lock.yaml
 junit.xml
+.npmrc

@@ -21,17 +21,21 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: pnpm
       - name: Install
-        run: |
-          yarn install 
+        run: pnpm install --frozen-lockfile
       - name: unit test
-        run: yarn test:ci
+        run: pnpm run test:ci
       - name: Type Check
-        run: yarn tsc --noEmit
+        run: pnpm exec tsc --noEmit
+      - name: Build
+        run: bash .scripts/prepublish.sh
       - name: Bundle size
-        run: yarn bundlesize
+        run: pnpm run bundlesize

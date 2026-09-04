@@ -22,28 +22,30 @@
     "bundlesize": "bundlesize",
     "lint": "eslint",
     "lintfix": "eslint --fix",
-    "postpublish": "npm run publish-storybook",
-    "prepublish": ". ./.scripts/prepublish.sh",
+    "postpublish": "pnpm run publish-storybook",
     "publish-storybook": "bash .scripts/publish_storybook.sh",
     "storybook": "storybook dev -p 9010",
     "build-storybook": "storybook build",
-    "test-watch": "npm run testonly --watch",
-    "test": "npm run lint && npm run testonly",
-    "test:ci": "npm run lint && npm run testonly:ci",
+    "test-watch": "pnpm run testonly --watch",
+    "test": "pnpm run lint && pnpm run testonly",
+    "test:ci": "pnpm run lint && pnpm run testonly:ci",
     "testonly": "jest src --config jest-config.js",
-    "testonly:ci": "jest src --config jest-config.js -u"
+    "testonly:ci": "jest src --config jest-config.js -u",
+    "prepublishOnly": ". ./.scripts/prepublish.sh"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/plugin-transform-typescript": "^7.16.8",
     "@babel/preset-env": "^7.24.5",
+    "@babel/preset-react": "^7.29.7",
     "@babel/preset-typescript": "^7.24.1",
     "@chromatic-com/storybook": "^3",
     "@storybook/addon-docs": "^8.4.7",
     "@storybook/addon-webpack5-compiler-babel": "^3.0.3",
     "@storybook/react": "^8.4.7",
     "@storybook/react-webpack5": "^8.4.7",
+    "@storybook/test": "^8.6.18",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
@@ -76,9 +78,6 @@
     "ts-loader": "^9.2.8",
     "typescript": "^5.0.0"
   },
-  "resolutions": {
-    "jackspeak": "2.1.1"
-  },
   "peerDependencies": {
     "react": ">=19.0.0"
   },
@@ -97,5 +96,19 @@
       "path": "./dist/es/*.js",
       "maxSize": "2 kB"
     }
-  ]
+  ],
+  "pnpm": {
+    "overrides": {
+      "jackspeak": "2.1.1"
+    },
+    "onlyBuiltDependencies": [
+      "core-js",
+      "esbuild",
+      "iltorb"
+    ]
+  },
+  "packageManager": "pnpm@10.14.0",
+  "engines": {
+    "node": ">=20"
+  }
 }
