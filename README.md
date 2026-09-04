@@ -40,6 +40,20 @@ To ensure compatibility and maintain a clean codebase, the library also utilizes
 
 We replies on [CSS custom property](https://caniuse.com/css-variables) and CSS `calc` [function](https://caniuse.com/?search=calc).
 
+## Requirements
+
+React 19 or later. React 19 passes `ref` to function components as an ordinary prop, so the
+component no longer needs a `forwardRef` wrapper — `ref` reaches the underlying `div` through
+`...restProps` like any other prop.
+
+If you are on React 18 or older, stay on `react-aspect-ratio@1.x`.
+
+## Migrating from 1.x
+
+`2.0` requires React 19, drops the legacy React 15.6 build, and removes the `forwardRef` wrapper.
+For most apps the upgrade is a version bump and nothing else — see [MIGRATION.md](./MIGRATION.md)
+for the full guide.
+
 ## Installation
 
 via [yarn](https://yarnpkg.com/en/docs)
@@ -61,16 +75,18 @@ $ npm install react-aspect-ratio
 | Props       | Type          | Default                                     | Description                                                                                   |
 |-------------|---------------|---------------------------------------------|-----------------------------------------------------------------------------------------------|
 | ratio       | string/number | 1                                           | Aspect ratio of your component, could be number or string like width/height                   |
+| ref         | Ref           |                                             | Forwarded to the underlying `div`                                                             |
 | other props | Object        | ```{style: {--aspect-ratio: ${ratio}} }``` | Any props to your React component, the library will add `--aspect-ratio` to your style object |
 | children    | React Element |                                             | Single DOM element                                                                            |
 
 **You will need to `import 'react-aspect-ratio/aspect-ratio.css'`**
 
-* Note
-```js
-import { AspectRatio } from 'react-aspect-ratio'; // Recommended: if you are using React > 15.6
+Both a named and a default export are available; they are the same component:
 
-import AspectRatio from 'react-aspect-ratio'; // Deprecated: if you are using React <= 15.6
+```js
+import { AspectRatio } from 'react-aspect-ratio';
+// or
+import AspectRatio from 'react-aspect-ratio';
 ```
 
 ```js

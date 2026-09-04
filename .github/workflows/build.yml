@@ -2,11 +2,11 @@ name: Build and Test
 
 # Controls when the action will run. 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main, '!gh-pages' ]
+    branches: [ main ]
+  # Every pull request, not just those targeting main — otherwise a stacked PR
+  # merges into its parent branch having never been built or tested.
   pull_request:
-    branches: [ main, '!gh-pages' ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:

@@ -1,3 +1,4 @@
+import { createRef } from 'react';
 import { render } from '@testing-library/react';
 import AspectRatio from '.';
 
@@ -28,5 +29,11 @@ describe('AspectRatio Component', () => {
     const customRatio = 1.5;
     const { container } = render(<AspectRatio ratio={customRatio}>Content</AspectRatio>);
     expect(container.firstChild).toHaveStyle({ '--aspect-ratio': `(${customRatio})` });
+  });
+
+  it('should forward ref to the underlying element', () => {
+    const ref = createRef<HTMLDivElement>();
+    const { container } = render(<AspectRatio ref={ref}>Content</AspectRatio>);
+    expect(ref.current).toBe(container.firstChild);
   });
 });
