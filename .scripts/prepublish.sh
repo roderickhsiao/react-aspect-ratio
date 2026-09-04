@@ -20,6 +20,13 @@ NODE_ENV=production BABEL_ENV=umd ./node_modules/.bin/babel --extensions ".ts,.t
 echo "=> Transpiling 'src' into NEXT ..."
 NODE_ENV=production BABEL_ENV=next ./node_modules/.bin/babel --extensions ".ts,.tsx" --ignore "./src/**/*.test.tsx,./src/stories/**" ./src --out-dir ./dist/next
 
+# The es/ and next/ builds are ESM but carry a .js extension, and the package has no
+# top-level "type". Without this marker Node parses them as CommonJS.
+echo "=> Marking ESM output directories ..."
+for esm_dir in ./dist/es ./dist/next; do
+  echo '{"type":"module"}' > "$esm_dir/package.json"
+done
+
 echo ""
 echo "=> Transpiling completed."
 
